@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Sidebar from './Components/Sidebar.js';
 
 import Header from "./Components/Header";
+import Sidebar from './Components/Sidebar.js';
 
 const App = props => {
   return (

@@ -14,9 +14,9 @@ const Header = props => {
 };
 
 /**
- * 
+ *
  * Styled Components
- * 
+ *
  */
 const HeaderWrapper = styled.header`
   height: 80px;

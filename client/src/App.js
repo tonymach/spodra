@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 
+import Header from "./Components/Header";
+
 const App = props => {
   return (
-
-
-
-    <div class="container">
-    
+    <div className="container">
+      <Header />
     </div>
   );
 };

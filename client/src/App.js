@@ -6,7 +6,11 @@ import Sidebar from './Components/Sidebar.js';
 const App = props => {
   return (
     <div className="container">
+<<<<<<< HEAD
       // <Header />
+=======
+      {/* <Header /> */}
+>>>>>>> b28db79ed30c6815047ba77a8c19092237e61f14
       <Sidebar />
     </div>
   );

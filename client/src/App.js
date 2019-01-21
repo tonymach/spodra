@@ -5,7 +5,6 @@ import Sidebar from "./Components/Sidebar";
 import image1 from "./images/1.jpg";
 import ImageBoard from "./Components/ImageBoard";
 
-
 const App = props => {
   return (
     <div className="container">

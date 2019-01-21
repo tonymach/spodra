@@ -26,12 +26,20 @@ const Navigation = props => {
  * Styled Components
  *
  */
-const NavigationWrapper = styled.nav``;
+const NavigationWrapper = styled.nav`
+`;
 
-const List = styled.ul``;
+const List = styled.ul`
+  display: flex;
+`;
 
-const ListItem = styled.li``;
+const ListItem = styled.li`
+  list-style: none;
+`;
 
-const Link = styled.a``;
+const Link = styled.a`
+  color: white;
+  padding: 10px;
+`;
 
 export default Navigation;

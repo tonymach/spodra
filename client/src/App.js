@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import Sidebar from './Components/Sidebar.js';
 
-// import Header from "./Components/Header";
+import Header from "./Components/Header";
+import Sidebar from "./Components/Sidebar";
 
 const App = props => {
   return (
-    <div className="container">
-      {/* <Header /> */}
+    <div>
+      <Header />
       <Sidebar />
     </div>
   );

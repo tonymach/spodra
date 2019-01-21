@@ -31,6 +31,8 @@ const Header = props => {
  * Styled Components
  *
  */
+
+
 const HeaderWrapper = styled.header`
   height: 80px;
   background: #10069F;

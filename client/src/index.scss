@@ -6,13 +6,34 @@
   box-sizing: border-box;
 }
 
+
+@fontface {
+  font-family: 'Butler';
+  font-style: normal;
+  font
+}
+
 body {
 }
 
+.sidebarContainer {
+  min-width:5%;
+  position:absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .sidebar {
   background-color: #10069f;
-  width: 10px;
-  height: 80%;
+  min-width: 10px;
+  min-height: 80vh;
+  display: block;
+
+}
+
+.letter {
+color: #10069f;
 }
 
 .container {

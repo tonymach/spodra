@@ -7,7 +7,7 @@ const App = props => {
   return (
     <div className="container">
       <Header />
-
+      <Sidebar />
     </div>
   );
 };

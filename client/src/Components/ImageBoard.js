@@ -25,22 +25,20 @@ const ImageBoard = props => {
       </ImageWrapper>
     </ImageBox>
   );
-
 };
 
+/* Styled Components */
 const ImageWrapper = styled.div`
   background-image: url(${props => props.image});
   background-size: 115%;
   background-position: top center;
   background-repeat: no-repeat;
   height: 100%;
-  margin-left: 94px;
 `;
 
 const ImageBox = styled.div`
   height: 86vh;
   margin-top: 40px;
-  margin-left: 40px;
 `;
 
 // Wraps two sides
@@ -52,7 +50,7 @@ const ContentWrapper = styled.div`
 `;
 
 const BigText = styled.h1`
-  font-size: 110px;
+  font-size: 80px;
   padding-left: 120px;
   color: #10069F;
   font-weight: bold;
@@ -70,17 +68,5 @@ const CircleContainer = styled.div`
   align-items: center;
   justify-content: center;
 `;
-
-// const Circle = styled.div`
-//   height: 400px;
-//   width: 400px;
-//   flex-wrap: wrap;
-//   border: 30px solid #FFCD00;
-//   border-radius: 50%;
-// `;
-
-// const InnerCircle = styled.div`
-//
-// `;
 
 export default ImageBoard;

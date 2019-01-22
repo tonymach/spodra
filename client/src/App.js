@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Fragment } from 'react';
 
 import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
@@ -7,12 +7,11 @@ import ImageBoard from "./Components/ImageBoard";
 
 const App = props => {
   return (
-    <div className="container">
-
+    <Fragment>
       <Header />
       <Sidebar />
       <ImageBoard image={image1} />
-    </div>
+    </Fragment>
   );
 };
 

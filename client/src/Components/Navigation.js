@@ -27,6 +27,8 @@ const Navigation = props => {
  *
  */
 const NavigationWrapper = styled.nav`
+  margin-right: 170px;
+  font-family: "HK Grotesk Medium", sans-serif;
 `;
 
 const List = styled.ul`
@@ -40,6 +42,7 @@ const ListItem = styled.li`
 const Link = styled.a`
   color: white;
   padding: 10px;
+  cursor: pointer;
 `;
 
 export default Navigation;

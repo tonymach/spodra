@@ -1,3 +1,5 @@
+@import "_fonts.scss";
+
 *,
 *::before,
 *::after {
@@ -12,30 +14,34 @@
   font-style: normal;
 }
 body {
+  font-size: 62.5%;
+  font-family: "Butler", sans-serif;
 }
 
 .sidebarContainer {
-  min-width:5%;
-  position:absolute;
+  margin-left: 40px;
+  margin-top: 40px;
+  float: left;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
 .sidebar {
   background-color: #10069f;
   min-width: 10px;
-  min-height: 80vh;
+  min-height: 3000px;
   display: block;
 }
 
 .letter {
   color: #10069f;
+  font-size: 64px;
 }
 
 .container {
-  min-width: 100%;
+  max-width: 80%;
   padding: 0px 10px;
   margin: 0 auto;
-  height:100%;
 }

@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
 import SectionOne from "./Components/SectionOne";
+import SectionTwo from "./Components/SectionTwo";
 import ImageBoard from "./Components/ImageBoard";
 
 // Images Imports
@@ -19,6 +20,7 @@ const App = props => {
       <MainWrapper>
         <ImageBoard image={image1} />
         <SectionOne image={image2} />
+        <SectionTwo image={image2} />
       </MainWrapper>
     </Fragment>
   );

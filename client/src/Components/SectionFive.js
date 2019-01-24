@@ -4,25 +4,17 @@ import styled from "styled-components";
 const SectionFive = ({ image }) => {
   return (
     <SectionFiveWrapper>
-      <LeftSide>
-
-      </LeftSide>
+      <LeftSide />
       <RightSide>
-
-      <RightSideTitle>SAMARBETE</RightSideTitle>
-      <RightSideText>
-Lai pārbaudītu mūsu saderību, mēs piedāvājam
-<br />
-iepazīšanās cenu telpu tīrīšanai līdz 80m2
-      </RightSideText>
-      <LargeScale>
-      -156 kr
-      </ LargeScale>
-      <BookNowButton>
-      Att Boka
-      </ BookNowButton>
-
-      </ RightSide>
+        <RightSideTitle>SAMARBETE</RightSideTitle>
+        <RightSideText>
+          Lai pārbaudītu mūsu saderību, mēs piedāvājam
+          <br />
+          iepazīšanās cenu telpu tīrīšanai līdz 80m2
+        </RightSideText>
+        <LargeScale>-156 kr</LargeScale>
+        <BookNowButton>Att Boka</BookNowButton>
+      </RightSide>
     </SectionFiveWrapper>
   );
 };
@@ -33,22 +25,21 @@ const SectionFiveWrapper = styled.div`
   grid-template-columns: repeat(2, 50%);
   height: 50vh;
   margin-top: -15vh;
-  background:#FF6464;
-
+  background: #ff6464;
 `;
 
 const LeftSide = styled.div`
   height: 100%;
-  color: #10069F;
+  color: #10069f;
 `;
 
 const RightSideTitle = styled.h1`
-margin-top:-5vh;
-color: #10069F;
+  margin-top: -5vh;
+  color: #10069f;
 `;
 
 const RightSideText = styled.p`
-  margin-top:10vh;
+  margin-top: 10vh;
   font-family: "HK Grotesk Medium", sans-serif;
   font-size: 16px;
   display: block;
@@ -63,19 +54,37 @@ const RightSide = styled.div`
 `;
 
 const LargeScale = styled.h1`
-  margin:15px;
+  margin: 15px;
   color: #fff;
   font-size: 5em;
 `;
 
 const BookNowButton = styled.button`
-  width: 12vw;
-  height:7vh;
-  background-color: #10069F;
-  color: #fff;
-  border: none;
-  font-size: 3em;
-`;
+  width: 260px;
+  height: 100px;
+  outline: 0;
+  background: #10069f;
+  color: white;
+  font-size: 34px;
+  font-family: "HK Grotesk Bold", sans-serif;
+  font-weight: bold;
+  border: 0px;
+  cursor: pointer;
+  transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
 
+  &:hover {
+    transform: translateY(-5px);
+    border-bottom: 10px solid rgb(12, 5, 109);
+  }
+
+  &:active {
+    transform: translateY(1px);
+    border-bottom: 6px solid rgb(12, 5, 109);
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+`;
 
 export default SectionFive;

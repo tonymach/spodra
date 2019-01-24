@@ -1,0 +1,109 @@
+import React from "react";
+import styled from "styled-components";
+
+import ImageThree from "../Assets/Images/03@2x.png";
+import BackgroundImage from "../images/5.jpg";
+
+const Garden = _ => (
+  <GardenWrapper>
+    <GardenTitle>TRÄDGÅRD</GardenTitle>
+
+    <GardenContainer>
+      <LeftSideImage src={ImageThree} alt="bigImage" />
+
+      <MainContainer>
+        <LeftSide>
+          <LeftSideTextContainer>
+            <LeftSideText>
+              Augi ir mūsu miera oāze ikdienas steigā. Uzturēt 
+              <br />
+              pašam savu dārzu vairs nav jābūt ekstrai, jo mūsu 
+              <br />
+              dārzkopji ir apveltīti ar izcilām iemaņām un pieredzi!
+              <br />
+            </LeftSideText>
+            <LeftSideTitle>
+              <u>UZTICĒT</u>
+            </LeftSideTitle>
+          </LeftSideTextContainer>
+        </LeftSide>
+        <RightSide image={BackgroundImage} />
+      </MainContainer>
+    </GardenContainer>
+  </GardenWrapper>
+);
+
+/**
+ *
+ * Styled Components
+ *
+ */
+const GardenWrapper = styled.div`
+  margin-top: 300px;
+`;
+
+const GardenTitle = styled.h1`
+  font-family: "HK Grotesk Bold", sans-serif;
+  font-size: 3.2em;
+  text-align: center;
+  margin-left: 19px;
+  margin-bottom: -150px;
+`;
+
+const GardenContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+`;
+
+const MainContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+const LeftSide = styled.div`
+  width: 50%;
+  height: 580px;
+  background: #10069f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+`;
+
+const LeftSideImage = styled.img`
+  width: 600px;
+  display: block;
+  position: relative;
+  margin-bottom: -390px;
+`;
+
+const LeftSideTextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 480px;
+  height: 480px;
+  margin-top: 220px;
+  font-family: "HK Grotesk Bold", sans-serif;
+  font-size: 0.9rem;
+`;
+
+const LeftSideText = styled.p`
+  color: white;
+  margin-bottom: 20px;
+`;
+
+const LeftSideTitle = styled.h1`
+  color: white;
+  font-size: 0.9rem;
+`;
+
+const RightSide = styled.div`
+  width: 50%;
+  height: 1425px;
+  background-image: url(${({ image }) => image});
+  background-size: cover;
+  background-position: center;
+`;
+
+export default Garden;

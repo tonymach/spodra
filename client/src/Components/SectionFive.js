@@ -9,13 +9,19 @@ const SectionFive = ({ image }) => {
       </LeftSide>
       <RightSide>
 
-      <RightSideTitle>TID</RightSideTitle>
+      <RightSideTitle>SAMARBETE</RightSideTitle>
       <RightSideText>
-      Reizi nedēļā tīrot māju 3 stundas mēs gadā vidēji iztērējam 156 stundas!
-      <br />
-      <br />
-      156 stundas , kuras varētu pavadīt ar ģimeni, draugiem vai apgūstot ko jaunu!
+Lai pārbaudītu mūsu saderību, mēs piedāvājam
+<br />
+iepazīšanās cenu telpu tīrīšanai līdz 80m2
       </RightSideText>
+      <LargeScale>
+      -156 kr
+      </ LargeScale>
+      <BookNowButton>
+      Att Boka
+      </ BookNowButton>
+
       </ RightSide>
     </SectionFiveWrapper>
   );
@@ -25,8 +31,8 @@ const SectionFive = ({ image }) => {
 const SectionFiveWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 50%);
-  height: 60vh;
-  margin-top: -10vh;
+  height: 50vh;
+  margin-top: -15vh;
   background:#FF6464;
 
 `;
@@ -38,26 +44,38 @@ const LeftSide = styled.div`
 
 const RightSideTitle = styled.h1`
 margin-top:-5vh;
+color: #10069F;
 `;
 
 const RightSideText = styled.p`
-  margin-Right: 100px;
+  margin-top:10vh;
   font-family: "HK Grotesk Medium", sans-serif;
   font-size: 16px;
   display: block;
 `;
 
 const RightSide = styled.div`
-  margin-top: 30vh;
+  margin-left: 7vw;
   background-repeat: no-repeat;
   background-position: right;
   background-size: 200%;
-  height: 1000px;
+  color: #fff;
 `;
 
 const LargeScale = styled.h1`
-  color: #10069F;
-  font-size: 35em;
+  margin:15px;
+  color: #fff;
+  font-size: 5em;
 `;
+
+const BookNowButton = styled.button`
+  width: 12vw;
+  height:7vh;
+  background-color: #10069F;
+  color: #fff;
+  border: none;
+  font-size: 3em;
+`;
+
 
 export default SectionFive;

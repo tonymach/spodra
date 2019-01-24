@@ -7,6 +7,7 @@ import SectionOne from "./Components/SectionOne";
 import SectionTwo from "./Components/SectionTwo";
 import SectionThree from "./Components/SectionThree";
 import SectionFour from "./Components/SectionFour";
+import SectionFive from "./Components/SectionFive";
 import ImageBoard from "./Components/ImageBoard";
 
 // Images Imports
@@ -26,6 +27,7 @@ const App = props => {
         <SectionTwo />
         <SectionThree/>
         <SectionFour image={image3} />
+        <SectionFive/>
 
       </MainWrapper>
     </Fragment>

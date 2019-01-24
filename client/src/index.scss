@@ -8,11 +8,6 @@
   box-sizing: border-box;
 }
 
-
-@font-face {
-  font-family: 'Butler';
-  font-style: normal;
-}
 body {
   font-size: 62.5%;
   font-family: "Butler", sans-serif;
@@ -31,7 +26,7 @@ body {
 .sidebar {
   background-color: #10069f;
   min-width: 10px;
-  min-height: 3000px;
+  min-height: 4000px;
   display: block;
 }
 

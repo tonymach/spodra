@@ -26,26 +26,6 @@ const SectionFour = ({ image }) => {
         </RightSideText>
       </RightSide>
 
-      <BottomSection>
-        <BottomSectionInner>
-          <BottomSectionInnerSquare>
-            <BottomSectionInnerSquareTitle>
-              SAMARBETE
-            </BottomSectionInnerSquareTitle>
-            <BottomSectionInnerSquareText>
-              Lai pārbaudītu mūsu saderību, mēs piedāvājam iepazīšanās cenu
-              telpu tīrīšanai līdz 80m2
-            </BottomSectionInnerSquareText>
-            <BottomSectionInnerSquareBigText>
-              - 156 kr.
-            </BottomSectionInnerSquareBigText>
-            <BottomSectionInnerSquareButton>
-              Att Boka
-            </BottomSectionInnerSquareButton>
-          </BottomSectionInnerSquare>
-          {/* <BottomSectionAd src={BigADURL} alt="AD" /> */}
-        </BottomSectionInner>
-      </BottomSection>
     </SectionFourWrapper>
   );
 };
@@ -100,7 +80,7 @@ const LargeScale = styled.img`
   z-index: 2;
 `;
 
-const BottomSection = styled.div` 
+const BottomSection = styled.div`
   height: 100%;
   width: 1379px;
   z-index: 0;
@@ -122,6 +102,7 @@ const BottomSectionInnerSquare = styled.div`
 `;
 
 const BottomSectionInnerSquareTitle = styled.h1`
+  color: #10069F;
   font-family: "HK Grotesk Bold", sans-serif;
   font-size: 22px;
   margin-bottom: 123px;

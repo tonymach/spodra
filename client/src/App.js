@@ -27,8 +27,7 @@ const App = props => {
         <SectionTwo />
         <SectionThree/>
         <SectionFour image={image3} />
-        <SectionFive/>
-
+        <SectionFive />
       </MainWrapper>
     </Fragment>
   );

@@ -30,7 +30,7 @@ const SidebarContainer = styled.div`
 const SidebarLine = styled.div`
   background-color: #10069f;
   min-width: 10px;
-  min-height: 9000px;
+  height: 9540px;
   display: block;
 `;
 

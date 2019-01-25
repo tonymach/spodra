@@ -13,6 +13,7 @@ import Cleaning from "./Components/Cleaning";
 import RelocationAssistance from "./Components/RelocationAssistance";
 import Garden from "./Components/Garden";
 import BusinessCard from "./Components/BusinessCard";
+import LastSection from "./Components/LastSection";
 
 // Images Imports
 import image1 from "./images/1.jpg";
@@ -28,13 +29,14 @@ const App = _ => (
       <ImageBoard image={image1} />
       <SectionOne image={image2} />
       <SectionTwo />
-      <SectionThree />
+      {/* <SectionThree /> */}
       <SectionFour image={image3} />
       <SectionFive />
       <Cleaning />
       <RelocationAssistance />
       <Garden />
       <BusinessCard />
+      <LastSection />
     </MainWrapper>
   </Fragment>
 );
@@ -43,7 +45,6 @@ const App = _ => (
 const MainWrapper = styled.div`
   background: #f5f5f5;
   margin-left: 140px;
-  height: 10000px;
 `;
 
 export default App;

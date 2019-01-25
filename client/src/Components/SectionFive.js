@@ -12,7 +12,7 @@ const SectionFive = ({ image }) => {
           <br />
           iepazīšanās cenu telpu tīrīšanai līdz 80<sub>m</sub><sup>2</sup>
         </RightSideText>
-        <LargeScale>-156 kr</LargeScale>
+        <LargeScale>156 kr</LargeScale>
         <BookNowButton>Att Boka</BookNowButton>
       </RightSide>
     </SectionFiveWrapper>

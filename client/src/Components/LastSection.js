@@ -7,17 +7,17 @@ const LastSection = _ => (
   <Wrapper>
     <LeftSide>
       <LeftSideTitle>IKDIENĀ MUMS UZTICAS</LeftSideTitle>
-      
+
       <LeftSideCard>
-        <h1>Hello World</h1>
+        <h1> </h1>
       </LeftSideCard>
-      
+
       <LeftSideCard>
-        <h1>Hello World</h1>
+        <h1> </h1>
       </LeftSideCard>
-      
+
       <LeftSideCard>
-        <h1>Hello World</h1>
+        <h1> </h1>
       </LeftSideCard>
     </LeftSide>
 
@@ -25,42 +25,51 @@ const LastSection = _ => (
       <RightSideImage src={lastImageURL} alt="last image" />
     </RightSide>
   </Wrapper>
-); 
+);
 
 /**
- * 
+ *
  * Styled Components
- * 
+ *
  */
 const Wrapper = styled.div`
+  margin-top: 400px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  width: 1228px;
-  height: 763px; 
-  margin-left: 150px;
-  margin-top: 77px;
 `;
 
-const LeftSide = styled.div``;
+const LeftSide = styled.div`
+  height: 760px;
+  width: 100%;
+  padding: 0px 0px 0px 150px;
+`;
 
 const LeftSideTitle = styled.h1`
   font-family: "HK Grotesk Bold", sans-serif;
-  font-size: 22px;
-  color: #10069F;
+  font-size: 1rem;
+  color: #10069f;
   margin-bottom: 16px;
 `;
 
 const LeftSideCard = styled.div`
   height: 100px;
   width: 260px;
-  background: #CCCCCC;
+  background: #cccccc;
   margin-bottom: 16px;
+  margin-right: 20px;
 `;
 
-const RightSide = styled.div``;
+const RightSide = styled.div`
+  position: relative;
+  height: auto;
+  width: auto;
+`;
 
 const RightSideImage = styled.img`
-  margin-top: 40px; 
+  position: absolute;
+  right: 0;
+  bottom: 0;
 `;
 
 export default LastSection;

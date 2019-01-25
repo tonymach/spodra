@@ -87,6 +87,7 @@ const CompanyLink = styled.a`
   color: #10069F;
   outline: 0;
   transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  font-size: 0.8rem;
 
   &:hover {
     color: rgba(21, 6, 243, 0.5);

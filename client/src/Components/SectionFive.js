@@ -10,9 +10,10 @@ const SectionFive = ({ image }) => {
         <RightSideText>
           Lai pārbaudītu mūsu saderību, mēs piedāvājam
           <br />
-          iepazīšanās cenu telpu tīrīšanai līdz 80<sub>m</sub><sup>2</sup>
+          iepazīšanās cenu telpu tīrīšanai līdz 80<sub>m</sub>
+          <sup>2</sup>
         </RightSideText>
-        <LargeScale>156 kr</LargeScale>
+        <LargeScale>156 kr.</LargeScale>
         <BookNowButton>Att Boka</BookNowButton>
       </RightSide>
     </SectionFiveWrapper>
@@ -23,7 +24,7 @@ const SectionFive = ({ image }) => {
 const SectionFiveWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 50%);
-  height: 50vh;
+  height: 65vh;
   margin-top: -15vh;
   background: #ff6464;
 `;
@@ -35,13 +36,14 @@ const LeftSide = styled.div`
 
 const RightSideTitle = styled.h1`
   margin-top: -8vh;
+  font-size: 0.8rem;
   color: #10069f;
 `;
 
 const RightSideText = styled.p`
   margin-top: 10vh;
   font-family: "HK Grotesk Medium", sans-serif;
-  font-size: 16px;
+  font-size: 0.8rem;
   display: block;
 `;
 
@@ -54,9 +56,9 @@ const RightSide = styled.div`
 `;
 
 const LargeScale = styled.h1`
-  margin: 15px;
   color: #fff;
-  font-size: 5em;
+  margin-bottom: 67px;
+  font-size: 3rem;
   font-family: "Butler Medium", serif;
   font-weight: medium;
 `;

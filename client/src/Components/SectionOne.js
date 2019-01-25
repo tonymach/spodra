@@ -41,13 +41,14 @@ const LeftSideTitle = styled.h1`
   margin-bottom: 168px;
   margin-top: 178px;
   margin-left: 138px;
+  font-size: 0.8rem;
 `;
 
 const LeftSideText = styled.p`
   color: white;
   margin-left: 138px;
   font-family: "HK Grotesk Medium", sans-serif;
-  font-size: 16px;
+  font-size: 0.8rem;
   display: block;
 `;
 

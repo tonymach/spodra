@@ -15,9 +15,9 @@ const Garden = _ => (
         <LeftSide>
           <LeftSideTextContainer>
             <LeftSideText>
-              Augi ir mūsu miera oāze ikdienas steigā. Uzturēt 
+              Augi ir mūsu miera oāze ikdienas steigā. Uzturēt
               <br />
-              pašam savu dārzu vairs nav jābūt ekstrai, jo mūsu 
+              pašam savu dārzu vairs nav jābūt ekstrai, jo mūsu
               <br />
               dārzkopji ir apveltīti ar izcilām iemaņām un pieredzi!
               <br />
@@ -44,7 +44,7 @@ const GardenWrapper = styled.div`
 
 const GardenTitle = styled.h1`
   font-family: "HK Grotesk Bold", sans-serif;
-  font-size: 3.2em;
+  font-size: 1.8rem;
   text-align: center;
   margin-left: 19px;
   margin-bottom: -150px;
@@ -85,12 +85,13 @@ const LeftSideTextContainer = styled.div`
   height: 480px;
   margin-top: 220px;
   font-family: "HK Grotesk Bold", sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 `;
 
 const LeftSideText = styled.p`
   color: white;
   margin-bottom: 20px;
+  font-size: 0.8rem;
 `;
 
 const LeftSideTitle = styled.h1`

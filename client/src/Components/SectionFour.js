@@ -38,12 +38,14 @@ const SectionFourWrapper = styled.div`
 `;
 
 const LeftSide = styled.div`
-  height: 1000px;
-  color: #fff;
+  min-height: 120px;
+  max-height: auto;
+  
   background-image: url(${({ bgImage }) => bgImage});
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
+
   z-index: 10;
   margin-bottom: -180px;
 `;
@@ -52,12 +54,13 @@ const RightSideTitle = styled.h1`
   margin-bottom: 120px;
   margin-top: 178px;
   margin-left: 105px;
+  font-size: 0.8rem;
 `;
 
 const RightSideText = styled.p`
   margin-left: 100px;
   font-family: "HK Grotesk Medium", sans-serif;
-  font-size: 16px;
+  font-size: 0.8rem;
   display: block;
 `;
 
@@ -69,20 +72,10 @@ const RightSide = styled.div`
 `;
 
 const LargeScale = styled.img`
-  position: relative;
-  z-index: 10;
-  margin-top: 10vh;
-  height: 300px;
-  display: block;
-  margin-left: 5vw;
-  color: #fff;
-  z-index: 2;
+  max-width: 100%;
+  height: auto;
+  margin-top: 200px;
+  margin-left: 90px;  
 `;
-
-// const BottomSectionAd = styled.img`
-//   height: 500px;
-//   display: block;
-//   margin-top: 400px;
-// `;
 
 export default SectionFour;

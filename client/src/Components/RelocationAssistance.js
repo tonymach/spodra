@@ -47,7 +47,7 @@ const RelocationAssistanceWrapper = styled.div`
 
 const RelocationAssistanceTitle = styled.h1`
   font-family: "HK Grotesk Bold", sans-serif;
-  font-size: 3.2em;
+  font-size: 1.8rem;
   text-align: center;
   margin-left: 19px;
   margin-bottom: -150px;
@@ -95,6 +95,7 @@ const LeftSideTextContainer = styled.div`
 const LeftSideText = styled.p`
   color: white;
   margin-bottom: 20px;
+  font-size: 0.8rem;
 `;
 
 const LeftSideTitle = styled.h1`

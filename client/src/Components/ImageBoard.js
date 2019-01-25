@@ -50,7 +50,7 @@ const ContentWrapper = styled.div`
 `;
 
 const BigText = styled.h1`
-  font-size: 80px;
+  font-size: 3.5rem;
   padding-left: 120px;
   color: #10069F;
   font-weight: bold;

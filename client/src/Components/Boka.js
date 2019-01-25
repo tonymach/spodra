@@ -26,7 +26,7 @@ const BokaTitle = styled.span`
   font-family: "HK Grotesk Bold", sans-serif;
   font-weight: 600;
   color: white;
-  font-size: 18px;
+  font-size: 22px;
 `;
 
 export default Boka

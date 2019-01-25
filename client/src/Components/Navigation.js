@@ -1,25 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 
-const Navigation = props => {
-  return (
-    <NavigationWrapper>
-      <List>
-        <ListItem>
-          <Link>STÄDHJÄLP</Link>
-        </ListItem>
+const Navigation = _ => (
+  <NavigationWrapper>
+    <List>
+      <ListItem>
+        <Link>STÄDHJÄLP</Link>
+      </ListItem>
 
-        <ListItem>
-          <Link>FLYTTHJÄLP</Link>
-        </ListItem>
+      <ListItem>
+        <Link>FLYTTHJÄLP</Link>
+      </ListItem>
 
-        <ListItem>
-          <Link>TRÄDGÅRD</Link>
-        </ListItem>
-      </List>
-    </NavigationWrapper>
-  );
-};
+      <ListItem>
+        <Link>TRÄDGÅRD</Link>
+      </ListItem>
+    </List>
+  </NavigationWrapper>
+);
 
 /**
  *
@@ -43,6 +41,7 @@ const Link = styled.a`
   color: white;
   padding: 10px;
   cursor: pointer;
+  font-size: 0.8rem;
 `;
 
 export default Navigation;

@@ -45,7 +45,7 @@ const CleaningWrapper = styled.div`
 
 const CleaningTitle = styled.h1`
   font-family: "HK Grotesk Bold", sans-serif;
-  font-size: 3.2em;
+  font-size: 1.8em;
   text-align: center;
   margin-left: 19px;
   margin-bottom: -150px;
@@ -91,11 +91,12 @@ const LeftSideTextContainer = styled.div`
 const LeftSideText = styled.p`
   color: white;
   margin-bottom: 20px;
+  font-size: 0.8rem;
 `;
 
 const LeftSideTitle = styled.h1`
   color: white;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 `;
 
 const RightSide = styled.div`

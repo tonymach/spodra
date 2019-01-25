@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import TidImage from "../Assets/Images/Tid2x.png"
+
 const SectionTwo = ({ image }) => {
   return (
     <SectionTwoWrapper>
@@ -16,9 +18,7 @@ const SectionTwo = ({ image }) => {
 
       <RightSide>
 
-        <LargeScale>
-        TID
-        </LargeScale>
+        <LargeScale src={TidImage} alt="TID Image" />
 
       </ RightSide>
     </SectionTwoWrapper>
@@ -31,7 +31,6 @@ const SectionTwoWrapper = styled.div`
   grid-template-columns: repeat(2, 50%);
   height: 800px;
   margin-top: 20vh;
-
 `;
 
 const LeftSide = styled.div`
@@ -43,7 +42,8 @@ const LeftSide = styled.div`
 const LeftSideTitle = styled.h1`
   margin-bottom: 168px;
   margin-top: 178px;
-  margin-left: 138px;
+  margin-left: 105px;
+  font-family: "HK Grotesk", sans-serif; 
 `;
 
 const LeftSideText = styled.p`
@@ -55,17 +55,17 @@ const LeftSideText = styled.p`
 
 const RightSide = styled.div`
   position: absolute;
-  right:10vw;
-  margin-top: 30vh;
+  right: 5vw;
+  margin-top: 25vh;
   background-repeat: no-repeat;
   background-position: right;
   background-size: 200%;
   height: 1000px;
 `;
 
-const LargeScale = styled.h1`
-  color: #10069F;
-  font-size: 35em;
+const LargeScale = styled.img`
+  height: 390px;
+  display: block;
 `;
 
 export default SectionTwo;

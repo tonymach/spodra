@@ -10,7 +10,7 @@ const SectionFive = ({ image }) => {
         <RightSideText>
           Lai pārbaudītu mūsu saderību, mēs piedāvājam
           <br />
-          iepazīšanās cenu telpu tīrīšanai līdz 80m2
+          iepazīšanās cenu telpu tīrīšanai līdz 80<sub>m</sub><sup>2</sup>
         </RightSideText>
         <LargeScale>-156 kr</LargeScale>
         <BookNowButton>Att Boka</BookNowButton>
@@ -34,7 +34,7 @@ const LeftSide = styled.div`
 `;
 
 const RightSideTitle = styled.h1`
-  margin-top: -5vh;
+  margin-top: -8vh;
   color: #10069f;
 `;
 
@@ -57,6 +57,8 @@ const LargeScale = styled.h1`
   margin: 15px;
   color: #fff;
   font-size: 5em;
+  font-family: "Butler Medium", serif;
+  font-weight: medium;
 `;
 
 const BookNowButton = styled.button`

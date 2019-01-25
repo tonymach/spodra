@@ -4,12 +4,7 @@ import styled from "styled-components";
 const SectionThree = ({ image }) => {
   return (
     <SectionThreeWrapper>
-
-
-        <LargeScale>
-        &
-        </LargeScale>
-
+      <LargeScale>&</LargeScale>
     </SectionThreeWrapper>
   );
 };
@@ -17,13 +12,12 @@ const SectionThree = ({ image }) => {
 /* Styled Components */
 const SectionThreeWrapper = styled.div`
   height: 20vh;
-  text-align:center;
+  text-align: center;
   display: relative;
   margin-top: -20vh;
 `;
 
 const LargeScale = styled.h1`
-
   color: #fff;
   font-size: 40em;
 `;

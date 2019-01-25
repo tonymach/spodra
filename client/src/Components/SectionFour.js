@@ -71,10 +71,10 @@ const RightSide = styled.div`
 const LargeScale = styled.img`
   position: relative;
   z-index: 10;
-  margin-top: 20vh;
-  height: 314px;
+  margin-top: 10vh;
+  height: 300px;
   display: block;
-  margin-left: 2vw;
+  margin-left: 5vw;
   color: #fff;
   z-index: 2;
 `;

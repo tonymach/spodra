@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const SectionFive = ({ image }) => {
+const SectionFive = ({ image, onClick }) => {
   return (
     <SectionFiveWrapper>
       <LeftSide />
@@ -14,7 +14,7 @@ const SectionFive = ({ image }) => {
           <sup>2</sup>
         </RightSideText>
         <LargeScale>156 kr.</LargeScale>
-        <BookNowButton>Att Boka</BookNowButton>
+        <BookNowButton onClick={onClick}>Att Boka</BookNowButton>
       </RightSide>
     </SectionFiveWrapper>
   );

@@ -6,7 +6,7 @@ import BokaIcon from "../Assets/Images/boka2x.png";
 const Boka = (props) => {
   return (
     <Fragment>
-      <BokaImage src={BokaIcon} alt="Att Boka" />
+      <BokaImage src={BokaIcon} alt="Att Boka" onClick={props.onClick} />
       <BokaTitle>Att Boka</BokaTitle>
     </Fragment>
   )

@@ -54,7 +54,7 @@ class Calendar extends Component {
 
 </DesignerModal>
 
-<button onClick={this.doIt} state={this.state}> Test </button>
+{/*<button onClick={this.doIt} state={this.state}>  </button> */}
 
                 </Modal>
     )   };

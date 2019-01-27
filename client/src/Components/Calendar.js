@@ -11,17 +11,20 @@ class Calendar extends Component {
     super(props);
     this.state = {
       date: new Date(),
-      email: "x@anthonymachula.ca",
-      name: "Frederick Orange",
+      email: "",
       cleaning: false,
       moving: false,
       garden: false,
-      checked: false
+      checked: false,
+      phone:"",
     }
+
     this.doIt = this.doIt.bind(this);
     this.handleMoving = this.handleMoving.bind(this);
     this.handleLaundry = this.handleLaundry.bind(this);
     this.handleGarden = this.handleGarden.bind(this);
+    this.handleEmail = this.handleEmail.bind(this);
+    this.handlePhone = this.handlePhone.bind(this);
   };
 
 
@@ -54,6 +57,15 @@ class Calendar extends Component {
       console.log(this.state);
     }
 
+    handlePhone(event) {
+    this.setState({phone: event.target.value});
+    }
+
+    handleEmail(event) {
+      this.setState({email: event.target.value});
+      console.log(this.state);
+    }
+
   render() {
     console.log(this.state);
     return (
@@ -82,6 +94,8 @@ class Calendar extends Component {
                    <Switch
                      width={60}
                      height={30}
+                     offColor="#808080"
+                     onColor="#10069F"
                      onChange={this.handleLaundry}
                      checked={this.state.cleaning}
                      id="cleaning-switch"
@@ -93,27 +107,32 @@ class Calendar extends Component {
                     <Switch
                       width={60}
                       height={30}
+                      offColor="#808080"
+                      onColor="#10069F"
                       onChange={this.handleMoving}
                       checked={this.state.moving}
                       id="moving-switch"
                     />
-                    <span>FLYTTHJÄLP</span>
+                    <SSpan>FLYTTHJÄLP</SSpan>
 
                   </SwitchLabel>
               <SwitchLabel htmlFor="garden">
                      <Switch
                        width={60}
                        height={30}
+                       offColor="#808080"
+                       onColor="#10069F"
                        onChange={this.handleGarden}
                        checked={this.state.garden}
                        id="garden-switch"
                      />
-                     <span>TRÄDGÅRD</span>
+                     <SSpan>TRÄDGÅRD</SSpan>
 
                    </SwitchLabel>
 
           </SwitchWrapper>
-
+          <InputNoTop value={this.state.phone} onChange={this.handlePhone} placeholder="DITT TELEFONNUMMER" type="phone"/>
+          <InputNoTop value={this.state.email} onChange={this.handleEmail} placeholder="ELLER E-POSTADRESS" type="email"/>
 
 
           <Boka state={this.state}> Att Boka </Boka>
@@ -149,24 +168,35 @@ const RightSide = styled.div`
 `;
 
 const SwitchLabel = styled.label`
- display:flex:
-flex-direction: row;
-justify-content: center;
-align-items: center;
-margin:15px;
+
+  display: flex!important;
+  align-items: center;
+margin:7px;
 width:100%;
 font-size: 12px;
 `;
 
 const SwitchWrapper = styled.div`
+margin-top:100px;
 display: grid;
-grid-template-row: repeat(6, 25%);
+grid-template-row: repeat(3, 25%);
 `;
 
 const SSpan = styled.span`
 font-size:1.2em;
-margin-bottom:40px;
+margin-left: 20px;
+color:#808080;
+`;
 
+
+const InputNoTop = styled.input`
+border-top:0;
+border-left:0;
+border-right:0;
+width:100%;
+margin-top:30px;
+font-size: 0.8em;
+color: #10069F;
 `;
 
 

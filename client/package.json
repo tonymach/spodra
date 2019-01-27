@@ -5,6 +5,7 @@
   "dependencies": {
     "emailjs-com": "^2.3.2",
     "moment": "^2.24.0",
+    "rc-switch": "^1.9.0",
     "react": "^16.8.0-alpha.1",
     "react-calendar": "^2.18.1",
     "react-datetime-picker": "^2.1.1",

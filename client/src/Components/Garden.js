@@ -6,6 +6,7 @@ import BackgroundImage from "../images/5.jpg";
 
 const Garden = _ => (
   <GardenWrapper>
+    <a id="garden"></a>
     <GardenTitle>TRÄDGÅRD</GardenTitle>
 
     <GardenContainer>

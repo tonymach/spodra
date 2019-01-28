@@ -6,6 +6,7 @@ import BackgroundImage from "../images/7.jpg";
 
 const Cleaning = _ => (
   <CleaningWrapper>
+    <a id="cleaning"></a>
     <CleaningTitle>STÄDHJÄLP</CleaningTitle>
 
     <CleaningContainer>

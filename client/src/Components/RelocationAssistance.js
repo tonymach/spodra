@@ -6,6 +6,7 @@ import BackgroundImage from "../images/3.jpg";
 
 const RelocationAssistance = _ => (
   <RelocationAssistanceWrapper>
+    <a id="relocationAssistance"></a>
     <RelocationAssistanceTitle>FLYTTHJÄLP</RelocationAssistanceTitle>
 
     <RelocationAssistanceContainer>

@@ -1,16 +1,14 @@
-import React, { Fragment } from 'react';
+import React, { Fragment } from "react";
 import styled from "styled-components";
 
 import BokaIcon from "../Assets/Images/boka2x.png";
 
-const Boka = (props) => {
-  return (
-    <Fragment>
-      <BokaImage src={BokaIcon} alt="Att Boka" onClick={props.onClick} />
-      <BokaTitle>Att Boka</BokaTitle>
-    </Fragment>
-  )
-}
+const Boka = ({ onClick }) => (
+  <Fragment>
+    <BokaImage src={BokaIcon} alt="Att Boka" onClick={onClick} />
+    <BokaTitle>Att Boka</BokaTitle>
+  </Fragment>
+);
 
 /**
  *
@@ -29,4 +27,4 @@ const BokaTitle = styled.span`
   font-size: 22px;
 `;
 
-export default Boka
+export default Boka;

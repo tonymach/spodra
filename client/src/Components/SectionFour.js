@@ -72,10 +72,10 @@ const RightSide = styled.div`
 `;
 
 const LargeScale = styled.img`
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
   margin-top: 200px;
-  margin-left: 90px;  
+  margin-left: 200px;  
 `;
 
 export default SectionFour;

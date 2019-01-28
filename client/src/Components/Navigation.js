@@ -5,15 +5,15 @@ const Navigation = _ => (
   <NavigationWrapper>
     <List>
       <ListItem>
-        <Link>STÄDHJÄLP</Link>
+        <Link href="#cleaning">STÄDHJÄLP</Link>
       </ListItem>
 
       <ListItem>
-        <Link>FLYTTHJÄLP</Link>
+        <Link href="#relocationAssistance">FLYTTHJÄLP</Link>
       </ListItem>
 
       <ListItem>
-        <Link>TRÄDGÅRD</Link>
+        <Link href="#garden">TRÄDGÅRD</Link>
       </ListItem>
     </List>
   </NavigationWrapper>
@@ -42,6 +42,12 @@ const Link = styled.a`
   padding: 10px;
   cursor: pointer;
   font-size: 0.8rem;
+  text-decoration: none;
+  transition: color 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  &:hover {
+    color: #7ed6df;
+  }
 `;
 
 export default Navigation;

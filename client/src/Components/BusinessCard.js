@@ -20,7 +20,10 @@ const BusinessCard = _ => (
           <CompanyInfo>E-post: info@spodra.se</CompanyInfo>
           <br />
           <br />
-          <CompanyLink target="__blank" href="https://www.google.com/maps/place/L%C3%A4nnav%C3%A4gen+64,+141+46+Huddinge,+Sweden/@59.2265761,17.9966624,17z/data=!4m5!3m4!1s0x465f70bafc5951d3:0xbdcff0df1e87962a!8m2!3d59.2265734!4d17.9988511">
+          <CompanyLink
+            target="__blank"
+            href="https://www.google.com/maps/place/L%C3%A4nnav%C3%A4gen+64,+141+46+Huddinge,+Sweden/@59.2265761,17.9966624,17z/data=!4m5!3m4!1s0x465f70bafc5951d3:0xbdcff0df1e87962a!8m2!3d59.2265734!4d17.9988511"
+          >
             VISA GOOGLE MAPS
           </CompanyLink>
         </RightSide>
@@ -57,16 +60,16 @@ const LeftSideTitle = styled.h1`
   font-family: "Butler Medium", serif;
   font-size: 2.2rem;
   margin-bottom: 100px;
-  color: #10069F;
+  color: #10069f;
 `;
 
 const HR = styled.hr`
-  background: #10069F;
+  background: #10069f;
   height: 2px;
 `;
 
 const RightSide = styled.div`
-  color: #10069F;
+  color: #10069f;
   padding-left: 120px;
 `;
 
@@ -84,7 +87,7 @@ const CompanyLink = styled.a`
   text-decoration: none;
   font-family: "HK Grotesk Bold", sans-serif;
   font-weight: bold;
-  color: #10069F;
+  color: #10069f;
   outline: 0;
   transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
   font-size: 0.8rem;

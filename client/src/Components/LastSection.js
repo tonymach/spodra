@@ -9,15 +9,15 @@ const LastSection = _ => (
       <LeftSideTitle>IKDIENĀ MUMS UZTICAS</LeftSideTitle>
 
       <LeftSideCard>
-        <h1> </h1>
+        <h1></h1>
       </LeftSideCard>
 
       <LeftSideCard>
-        <h1> </h1>
+        <h1></h1>
       </LeftSideCard>
 
       <LeftSideCard>
-        <h1> </h1>
+        <h1></h1>
       </LeftSideCard>
     </LeftSide>
 

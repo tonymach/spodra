@@ -24,12 +24,11 @@ const App = _ => (
   <Fragment>
     <Header />
     <Sidebar />
-
+  
     <MainWrapper>
       <ImageBoard image={image1} />
       <SectionOne image={image2} />
       <SectionTwo />
-      {/* <SectionThree /> */}
       <SectionFour image={image3} />
       <SectionFive />
       <Cleaning />

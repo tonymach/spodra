@@ -14,7 +14,7 @@ const Header = props => {
           <Navigation />
         </HeaderContainer>
 
-        <BokaWrapper>
+        <BokaWrapper onClick={props.action}>
           <Boka />
         </BokaWrapper>
       </ContentWrapper>

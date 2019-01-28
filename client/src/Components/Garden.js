@@ -4,7 +4,7 @@ import styled from "styled-components";
 import ImageThree from "../Assets/Images/03@2x.png";
 import BackgroundImage from "../images/5.jpg";
 
-const Garden = _ => (
+const Garden = ({ openModal }) => (
   <GardenWrapper>
     <a id="garden"></a>
     <GardenTitle>TRÄDGÅRD</GardenTitle>
@@ -23,7 +23,7 @@ const Garden = _ => (
               dārzkopji ir apveltīti ar izcilām iemaņām un pieredzi!
               <br />
             </LeftSideText>
-            <LeftSideTitle>
+            <LeftSideTitle onClick={openModal}>
               <u>UZTICĒT</u>
             </LeftSideTitle>
           </LeftSideTextContainer>
@@ -49,6 +49,11 @@ const GardenTitle = styled.h1`
   text-align: center;
   margin-left: 19px;
   margin-bottom: -150px;
+
+  @media screen and (max-width: 1400px) {
+    font-size: 1.2rem;
+    margin-bottom: -100px;
+  }
 `;
 
 const GardenContainer = styled.div`
@@ -77,6 +82,11 @@ const LeftSideImage = styled.img`
   display: block;
   position: relative;
   margin-bottom: -390px;
+
+  @media screen and (max-width: 1400px) {
+    margin-bottom: -300px;
+    width: 400px;
+  }
 `;
 
 const LeftSideTextContainer = styled.div`
@@ -93,11 +103,19 @@ const LeftSideText = styled.p`
   color: white;
   margin-bottom: 20px;
   font-size: 0.8rem;
+
+  @media screen and (max-width: 1400px) {
+    font-size: 0.5rem;
+  }
 `;
 
 const LeftSideTitle = styled.h1`
   color: white;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+
+  @media screen and (max-width: 1400px) {
+    font-size: 0.5rem;
+  }
 `;
 
 const RightSide = styled.div`

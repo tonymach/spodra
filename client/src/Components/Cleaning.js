@@ -4,9 +4,9 @@ import styled from "styled-components";
 import ImageOne from "../Assets/Images/01@2x.png";
 import BackgroundImage from "../images/7.jpg";
 
-const Cleaning = _ => (
+const Cleaning = ({ openModal }) => (
   <CleaningWrapper>
-    <a id="cleaning"></a>
+    <button id="cleaning" />
     <CleaningTitle>STÄDHJÄLP</CleaningTitle>
 
     <CleaningContainer>
@@ -24,7 +24,7 @@ const Cleaning = _ => (
               <br />
               nodrošina reputāciju, par kuru varam būt lepni šodien.
             </LeftSideText>
-            <LeftSideTitle>
+            <LeftSideTitle onClick={openModal}>
               <u>UZTICĒT</u>
             </LeftSideTitle>
           </LeftSideTextContainer>
@@ -50,6 +50,11 @@ const CleaningTitle = styled.h1`
   text-align: center;
   margin-left: 19px;
   margin-bottom: -150px;
+  
+  @media screen and (max-width: 1400px) {
+    font-size: 1.2rem;
+    margin-bottom: -100px;
+  }
 `;
 
 const CleaningContainer = styled.div`
@@ -77,6 +82,11 @@ const LeftSideImage = styled.img`
   display: block;
   position: relative;
   margin-bottom: -320px;
+  
+  @media screen and (max-width: 1400px) {
+    margin-bottom: -250px;
+    width: 400px;
+  }
 `;
 
 const LeftSideTextContainer = styled.div`
@@ -93,6 +103,10 @@ const LeftSideText = styled.p`
   color: white;
   margin-bottom: 20px;
   font-size: 0.8rem;
+
+  @media screen and (max-width: 1400px) {
+    font-size: 0.5rem;
+  }
 `;
 
 const LeftSideTitle = styled.h1`

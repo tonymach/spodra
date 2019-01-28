@@ -18,31 +18,39 @@ const Sidebar = _ => (
  *
  */
 const SidebarContainer = styled.div`
-  margin-left: 40px;
   margin-top: 40px;
-  float: left;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  left: 25px;
+  
+  @media screen and (max-width: 1400px) {
+    left: 15px;
+  }
 `;
 
 const SidebarLine = styled.div`
   background-color: #10069f;
-  min-width: 10px;
+  min-width: 5px;
   height: 9540px;
   display: block;
+
+  @media screen and (max-width: 1400px) {
+    height: 9150px;
+  }
 `;
 
 const LetterA = styled.img`
-  width: 60px;
-  margin-bottom: 23px;
+  width: 30px;
+  margin-bottom: 10px;
 `;
 
 const LetterB = styled.img`
-  width: 46px;
-  margin-top: 23px;
-  margin-left: 12px;
+  width: 28px;
+  margin-top: 10px;
+  margin-left: 5px;
 `;
 
 export default Sidebar;

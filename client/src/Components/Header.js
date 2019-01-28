@@ -33,16 +33,15 @@ const HeaderWrapper = styled.header`
 
 const ContentWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 50%);
-  justify-items: last baseline;
+  grid-template-columns: 60% auto;
   height: 100%;
 `;
 
 const HeaderContainer = styled.div`
   display: grid;
-  grid-template-columns: 65% auto;
+  grid-template-columns: 60% 20%;
   align-items: center;
-  justify-items: center;
+  justify-items: normal;
 `;
 
 const Logo = styled.img`
@@ -53,9 +52,8 @@ const Logo = styled.img`
 const BokaWrapper = styled.div`
   background: #00bf6f;
   height: 100%;
-  width: 540px;
+  margin-left: 100px;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -63,6 +61,14 @@ const BokaWrapper = styled.div`
 
   &:hover {
     background: #019c5b;
+  }
+  
+  @media screen and (max-width: 1250px) {
+    width: 430px;
+  }
+
+  @media screen and (max-width: 1100px) {
+    width: 340px;
   }
 `;
 

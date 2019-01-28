@@ -13,7 +13,7 @@ const BusinessCard = _ => (
           <CompanyName>STOCKHOLM</CompanyName>
           <br />
           <br />
-          <CompanyInfo>Lännavägen 64, 141 34, Huddinge</CompanyInfo>
+          <CompanyInfo>Lännavägen 113, 141 46 Huddinge</CompanyInfo>
           <CompanyInfo>Tel: 08 774 18 03</CompanyInfo>
           <CompanyInfo>Tel: 0707 413 772</CompanyInfo>
           <CompanyInfo>E-post: info@spodra.se</CompanyInfo>
@@ -60,6 +60,10 @@ const LeftSideTitle = styled.h1`
   font-size: 2.2rem;
   margin-bottom: 100px;
   color: #10069f;
+
+  @media screen and (max-width: 1400px) {
+    font-size: 1.8rem;
+  }
 `;
 
 const HR = styled.hr`
@@ -75,11 +79,19 @@ const RightSide = styled.div`
 const CompanyName = styled.h1`
   font-family: "HK Grotesk Bold", sans-serif;
   font-size: 0.8rem;
+
+  @media screen and (max-width: 1400px) {
+    font-size: 0.5rem;
+  }
 `;
 
 const CompanyInfo = styled.p`
   font-family: "HK Grotesk Medium", sans-serif;
   font-size: 1rem;
+
+  @media screen and (max-width: 1400px) {
+    font-size: 0.8rem;
+  }
 `;
 
 const CompanyLink = styled.a`
@@ -91,11 +103,15 @@ const CompanyLink = styled.a`
   transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
   font-size: 0.8rem;
 
+  @media screen and (max-width: 1400px) {
+    font-size: 0.6rem;
+  }
+
   &:hover {
     color: rgba(21, 6, 243, 0.5);
   }
 
-  &-::-moz-focus-inner {
+  &::-moz-focus-inner {
     border: 0;
   }
 `;

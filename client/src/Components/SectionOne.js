@@ -34,6 +34,10 @@ const SectionOneWrapper = styled.div`
 const LeftSide = styled.div`
   background: #10069F;
   height: 760px;
+
+  @media screen and (max-width: 1400px) {
+    height: 600px;
+  }
 `;
 
 const LeftSideTitle = styled.h1`
@@ -42,6 +46,12 @@ const LeftSideTitle = styled.h1`
   margin-top: 178px;
   margin-left: 118px;
   font-size: 0.8rem;
+  
+  @media screen and (max-width: 1400px) {
+    font-size: 0.5rem;
+    margin-left: 75px;
+    margin-bottom: 108px;
+  }
 `;
 
 const LeftSideText = styled.p`
@@ -50,6 +60,11 @@ const LeftSideText = styled.p`
   font-family: "HK Grotesk Medium", sans-serif;
   font-size: 0.8rem;
   display: block;
+
+  @media screen and (max-width: 1400px) {
+    font-size: 0.5rem;
+    margin-left: 75px;
+  } 
 `;
 
 const RightSide = styled.div`

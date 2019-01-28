@@ -55,6 +55,10 @@ const RightSideTitle = styled.h1`
   margin-top: 178px;
   margin-left: 105px;
   font-size: 0.8rem;
+
+  @media screen and (max-width: 1400px) {
+    font-size: 0.5rem;
+  }
 `;
 
 const RightSideText = styled.p`
@@ -62,6 +66,10 @@ const RightSideText = styled.p`
   font-family: "HK Grotesk Medium", sans-serif;
   font-size: 0.8rem;
   display: block;
+
+  @media screen and (max-width: 1400px) {
+    font-size: 0.5rem;
+  }
 `;
 
 const RightSide = styled.div`
@@ -76,6 +84,11 @@ const LargeScale = styled.img`
   height: auto;
   margin-top: 200px;
   margin-left: 200px;  
+  
+  @media screen and (max-width: 1400px) {
+    margin-left: 230px;  
+    max-width: 70%;
+  }
 `;
 
 export default SectionFour;

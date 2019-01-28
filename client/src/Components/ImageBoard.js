@@ -39,6 +39,7 @@ const ImageWrapper = styled.div`
 const ImageBox = styled.div`
   height: 86vh;
   margin-top: 40px;
+  position: relative;
 `;
 
 // Wraps two sides
@@ -55,10 +56,18 @@ const BigText = styled.h1`
   color: #10069F;
   font-weight: bold;
   margin-right: 127px;
+
+  @media screen and (max-width: 1400px) {
+    font-size: 2.6rem;
+  }
 `;
 
 const CircleImage = styled.img`
   height: 500px;
+
+  @media screen and (max-width: 1400px) {
+    height: 350px;
+  }
 `;
 
 const CircleContainer = styled.div`

@@ -25,16 +25,17 @@ const Navigation = _ => (
  *
  */
 const NavigationWrapper = styled.nav`
-  margin-right: 170px;
   font-family: "HK Grotesk Medium", sans-serif;
-`;
+  `;
 
 const List = styled.ul`
-  display: flex;
+  width: 400px;
 `;
 
 const ListItem = styled.li`
   list-style: none;
+  display: inline-block;
+  padding: 5px;
 `;
 
 const Link = styled.a`
@@ -44,6 +45,15 @@ const Link = styled.a`
   font-size: 0.8rem;
   text-decoration: none;
   transition: color 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  outline: 0;
+
+  @media screen and (max-width: 1200px) {
+    font-size: 0.5rem;
+  } 
+
+  &--moz-focus-inner {
+    border: 0;
+  }
 
   &:hover {
     color: #7ed6df;

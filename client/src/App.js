@@ -38,32 +38,42 @@ export default class App extends Component {
     return (
       <Fragment>
         <Header action={this.onOpenModal} />
-        <Sidebar />
 
-        <MainWrapper>
-          <ImageBoard image={image1} />
-          <SectionOne image={image2} />
-          <SectionTwo />
-          <SectionFour image={image3} />
-          <SectionFive onClick={this.onOpenModal} />
-          <Cleaning />
-          <RelocationAssistance />
-          <Garden />
-          <BusinessCard />
-          <LastSection />
-          <Calendar
-            onOpen={this.onOpenModal}
-            onClose={this.onCloseModal}
-            open={this.state.open}
-          />
-        </MainWrapper>
+        <Wrapper>
+          <Sidebar />
+
+          <MainWrapper>
+            <ImageBoard image={image1} />
+            <SectionOne image={image2} />
+            <SectionTwo />
+            <SectionFour image={image3} />
+            <SectionFive onClick={this.onOpenModal} />
+            <Cleaning openModal={this.onOpenModal} />
+            <RelocationAssistance openModal={this.onOpenModal} />
+            <Garden openModal={this.onOpenModal} />
+            <BusinessCard />
+            <LastSection />
+            <Calendar
+              onOpen={this.onOpenModal}
+              onClose={this.onCloseModal}
+              open={this.state.open}
+            />
+          </MainWrapper>
+        </Wrapper>
+
       </Fragment>
     );
   }
 }
 
 /* Styled Components */
+const Wrapper = styled.div`
+  display: grid;
+`;
+
 const MainWrapper = styled.div`
   background: #f5f5f5;
-  margin-left: 140px;
+  margin-top: 20px;
+  width: 94.7%;
+  justify-self: right;
 `;

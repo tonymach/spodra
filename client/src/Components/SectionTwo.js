@@ -48,13 +48,21 @@ const LeftSideTitle = styled.h1`
   margin-left: 105px;
   font-family: "HK Grotesk", sans-serif;
   font-size: 0.8rem;
-`;
+
+  @media screen and (max-width: 1400px) {
+    font-size: 0.5rem;
+  }
+  `;
 
 const LeftSideText = styled.p`
   margin-left: 100px;
   font-family: "HK Grotesk Medium", sans-serif;
   font-size: 0.8rem;
   display: block;
+
+  @media screen and (max-width: 1400px) {
+    font-size: 0.5rem;
+  }
 `;
 
 const RightSide = styled.div`
@@ -71,6 +79,10 @@ const LargeScale = styled.img`
   display: block;
   position: relative;
   right: 100px;
+
+  @media screen and (max-width: 1400px) {
+    max-width: 70%;
+  }
 `;
 
 export default SectionTwo;

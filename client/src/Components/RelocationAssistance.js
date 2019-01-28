@@ -4,9 +4,9 @@ import styled from "styled-components";
 import ImageTwo from "../Assets/Images/02@2x.png";
 import BackgroundImage from "../images/3.jpg";
 
-const RelocationAssistance = _ => (
+const RelocationAssistance = ({ openModal }) => (
   <RelocationAssistanceWrapper>
-    <a id="relocationAssistance"></a>
+    <button id="relocationAssistance" />
     <RelocationAssistanceTitle>FLYTTHJÄLP</RelocationAssistanceTitle>
 
     <RelocationAssistanceContainer>
@@ -27,7 +27,7 @@ const RelocationAssistance = _ => (
               <br />
               pārvadājumus mums.
             </LeftSideText>
-            <LeftSideTitle>
+            <LeftSideTitle onClick={openModal}>
               <u>UZTICĒT</u>
             </LeftSideTitle>
           </LeftSideTextContainer>
@@ -52,6 +52,11 @@ const RelocationAssistanceTitle = styled.h1`
   text-align: center;
   margin-left: 19px;
   margin-bottom: -150px;
+
+  @media screen and (max-width: 1400px) {
+    font-size: 1.2rem;
+    margin-bottom: -100px;
+  }
 `;
 
 const RelocationAssistanceContainer = styled.div`
@@ -81,6 +86,11 @@ const LeftSideImage = styled.img`
   float: right;
   right: 0;
   margin-bottom: -270px;
+
+  @media screen and (max-width: 1400px) {
+    margin-bottom: -200px;
+    width: 400px;
+  }
 `;
 
 const LeftSideTextContainer = styled.div`
@@ -97,11 +107,19 @@ const LeftSideText = styled.p`
   color: white;
   margin-bottom: 20px;
   font-size: 0.8rem;
+
+  @media screen and (max-width: 1400px) {
+    font-size: 0.5rem;
+  }
 `;
 
 const LeftSideTitle = styled.h1`
   color: white;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+
+  @media screen and (max-width: 1400px) {
+    font-size: 0.5rem;
+  }
 `;
 
 const RightSide = styled.div`

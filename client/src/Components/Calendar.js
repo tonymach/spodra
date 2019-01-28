@@ -68,15 +68,12 @@ class Calendar extends Component {
     console.log(this.state);
 
     return (
-      // This modal opens when the buttons are pressed
-      // DesignerModal is the form
-      // Only thing left is to style
-      // If you're able to add the styling everything else will litterally work just have to update the state
-
       <Modal open={this.props.open} onClose={this.props.onClose} center>
         <DesignerModal>
-          <Title> ANGE DATUM, TID, SERVICE OCH KONTAKTUPPGIFTER </Title>
+          <Title>ANGE DATUM, TID, SERVICE OCH KONTAKTUPPGIFTER</Title>
+          
           <FormWrapper>
+
             <LeftSide>
               <ExternalCalendar
                 className="calendar"
@@ -138,9 +135,11 @@ class Calendar extends Component {
                 required
               />
 
-              <Boka state={this.state}> Att Boka </Boka>
+              <Boka state={this.state}>Att Boka</Boka>
             </RightSide>
+            
           </FormWrapper>
+
         </DesignerModal>
       </Modal>
     );
@@ -155,12 +154,15 @@ class Calendar extends Component {
 const Title = styled.h6`
   margin: 2px;
   color: #cccccc;
-`;
+  `;
 
 const DesignerModal = styled.div`
   text-align: center;
   width: 50vw;
   height: 60vh;
+  
+  @media screen and (max-width: 1400px) {
+  }
 `;
 
 const LeftSide = styled.div`
@@ -170,10 +172,25 @@ const LeftSide = styled.div`
   .calendar {
     height: 400px;
     width: 350px;
-    margin-top: 20px;
+    margin-top: 40px;
+    padding: 10px;
+    
+    @media screen and (max-width: 1400px) {
+      margin-top: 40px;
+      padding: 10px;
+      font-size: 0.5rem;
+    }
   }
 `;
-const RightSide = styled.div``;
+
+const RightSide = styled.div`
+  margin-left: 20px;
+
+  @media screen and (max-width: 1400px) {
+    margin-right: 30px;
+    margin-left: 50px;
+  }
+`;
 
 const SwitchLabel = styled.label`
   display: flex !important;
@@ -199,10 +216,20 @@ const InputNoTop = styled.input`
   border-top: 0;
   border-left: 0;
   border-right: 0;
-  width: 100%;
   margin-top: 30px;
+  display: block;
+  background-color: transparent;
   font-size: 0.8em;
   color: #10069f;
+  outline: 0;
+
+  &--moz-placeholder {
+    color: #10069f;
+  }
+
+  &::placeholder {
+    color: #10069f;
+  }
 `;
 
 const Boka = styled.button`

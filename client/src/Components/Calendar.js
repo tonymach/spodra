@@ -56,21 +56,21 @@ class Calendar extends Component {
 
     const twoPrecent = this.filterWords();
     console.log(twoPrecent);
-    // emailjs
-    //   .send(
-    //     "mailgun",
-    //     "template_qSXVYhqQ",
-    //     twoPrecent,
-    //     "user_33y4IdJtVCRtMnuhPQf2p"
-    //   )
-    //   .then(
-    //     response => {
-    //       console.log("SUCCESS!", response.status, response.text);
-    //     },
-    //     err => {
-    //       console.log("FAILED...", err);
-    //     }
-    //   );
+    emailjs
+      .send(
+        "mailgun",
+        "template_qSXVYhqQ",
+        twoPrecent,
+        "user_33y4IdJtVCRtMnuhPQf2p"
+      )
+      .then(
+        response => {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        err => {
+          console.log("FAILED...", err);
+        }
+      );
   }
 
 

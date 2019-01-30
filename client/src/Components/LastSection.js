@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-
 import lastImageURL from "../Assets/Images/lastImage2x.png";
 
 const LastSection = _ => (
@@ -9,17 +8,14 @@ const LastSection = _ => (
       <LeftSideTitle>IKDIENĀ MUMS UZTICAS</LeftSideTitle>
 
       <LeftSideCard>
-        <CompanyName>STOREX</CompanyName>
-        <CompanyLink href="https://storex.se/">Visit</CompanyLink>
+        <CompanyLink href="https://storex.se/"><ImageCard src="https://storex.se/wp-content/uploads/2017/01/Storex_logo-3.png"/></CompanyLink>
       </LeftSideCard>
 
       <LeftSideCard>
-        <h1>Two</h1>
-      </LeftSideCard>
+        <CompanyLink href="https://easyflat.se/"><ImageCard src="http://www.easyflat.se/wp-content/uploads/2016/12/custom-logo-300x64.png"/></CompanyLink>      </LeftSideCard>
 
       <LeftSideCard>
-        <h1>Three</h1>
-      </LeftSideCard>
+        <CompanyLink href="https://smartbox.se/"><ImageCard src="https://www.smartbox.se/imgs/brandstyle/smartbox/logo.svg"/></CompanyLink>      </LeftSideCard>
     </LeftSide>
 
     <RightSide>
@@ -56,7 +52,7 @@ const LeftSideTitle = styled.h1`
   font-size: 1rem;
   color: #10069f;
   margin-bottom: 16px;
-  
+
   @media screen and (max-width: 1400px) {
     font-size: 0.8rem;
   }
@@ -86,6 +82,13 @@ const RightSideImage = styled.img`
     width: 700px;
   }
 `;
+
+const ImageCard = styled.img`
+  margin-top:7%;
+  max-width:100%;
+
+`;
+
 
 const CompanyName = styled.h1``;
 

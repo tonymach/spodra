@@ -27,7 +27,7 @@ const Garden = ({ openModal }) => (
               färdigheter och erfarenhet!
             </LeftSideText>
             <LeftSideTitle onClick={openModal}>
-              <u>UZTICĒT</u>
+              <u>BOKA</u>
             </LeftSideTitle>
           </LeftSideTextContainer>
         </LeftSide>

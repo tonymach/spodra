@@ -38,7 +38,7 @@ const LastSection = _ => (
  *
  */
 const Wrapper = styled.div`
-  margin-top: 400px;
+  margin-top: 50px;
 
   @media screen and (max-width: 1400px) {
     margin-top: 200px;

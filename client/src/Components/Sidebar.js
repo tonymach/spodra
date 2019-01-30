@@ -34,7 +34,7 @@ const SidebarContainer = styled.div`
 const SidebarLine = styled.div`
   background-color: #10069f;
   min-width: 5px;
-  height: 10200px;
+  height: 9850px;
   display: block;
 
   @media screen and (max-width: 1400px) {

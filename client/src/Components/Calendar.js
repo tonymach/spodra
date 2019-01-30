@@ -126,6 +126,7 @@ class Calendar extends Component {
                     size="xs"
                     mode={2}
                     show
+                    locale="en-us"
                     onClose={_ => this.setState(_ => ({ toggleTime: false }))}
                     onHourChange={res =>
                       this.setState(_ => ({ hours: res.value }))

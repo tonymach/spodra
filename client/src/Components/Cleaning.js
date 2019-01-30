@@ -29,7 +29,7 @@ const Cleaning = ({ openModal }) => (
               städas ordentligt och detaljerat!
             </LeftSideText>
             <LeftSideTitle onClick={openModal}>
-              Boka
+              <u>BOKA</u>
             </LeftSideTitle>
           </LeftSideTextContainer>
         </LeftSide>

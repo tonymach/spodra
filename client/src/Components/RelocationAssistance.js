@@ -30,7 +30,7 @@ const RelocationAssistance = ({ openModal }) => (
               Stockholm med många års erfarenhet inom detta området.
             </LeftSideText>
             <LeftSideTitle onClick={openModal}>
-              <u>UZTICĒT</u>
+              <u>BOKA</u>
             </LeftSideTitle>
           </LeftSideTextContainer>
         </LeftSide>

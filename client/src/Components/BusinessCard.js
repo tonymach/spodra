@@ -6,7 +6,7 @@ const BusinessCard = _ => (
     <Container>
       <Content>
         <LeftSide>
-          <LeftSideTitle>Ja mes varam ietaupit jusu laiku</LeftSideTitle>
+          <LeftSideTitle>vi kan spara din tid</LeftSideTitle>
           <HR />
         </LeftSide>
         <RightSide>
@@ -43,7 +43,7 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   display: block;
-  margin: 190px auto;
+  margin: 200px auto;
 `;
 
 const Content = styled.div`

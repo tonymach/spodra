@@ -5,7 +5,7 @@ import * as emailjs from "emailjs-com";
 import Switch from "react-switch";
 import { Calendar as ExternalCalendar } from "react-calendar";
 import PickyDateTime from "react-picky-date-time";
-
+import moment from "moment";
 // import moment from "moment";
 
 class Calendar extends Component {
@@ -24,33 +24,69 @@ class Calendar extends Component {
       seconds: null,
       toggleTime: false
     };
+    this.doIt = this.doIt.bind(this);
   }
 
-  // Toggles the time PickyTime component
-  toggleTime = _ => this.setState(_ => ({ toggleTime: true }));
+  //
 
-  // Set the date entered by the user
-  onChangeDate = date => this.setState({ date });
+
+
+  boolCleaning(bool) {
+    if (bool) return " Ja";
+    return " Nej";
+  }
+
+
+  filterWords () {
+
+    var t = this.state;
+    var f = this.state;
+    f.cleaning = this.boolCleaning(t.cleaning);
+    f.moving = this.boolCleaning(t.moving);
+    f.garden = this.boolCleaning(t.garden);
+    moment.locale("sv");
+    f.date =  moment(t.date).format("MMM Do YY");               // Jan 30th 19
+    return(f);
+
+  }
 
   // Sends an email of the state above to the @info email
-  doIt(e, state) {
+  doIt(e) {
     e.preventDefault();
-    emailjs
-      .send(
-        "mailgun",
-        "template_qSXVYhqQ",
-        this.state,
-        "user_33y4IdJtVCRtMnuhPQf2p"
-      )
-      .then(
-        response => {
-          console.log("SUCCESS!", response.status, response.text);
-        },
-        err => {
-          console.log("FAILED...", err);
-        }
-      );
+
+    const twoPrecent = this.filterWords();
+    console.log(twoPrecent);
+    // emailjs
+    //   .send(
+    //     "mailgun",
+    //     "template_qSXVYhqQ",
+    //     twoPrecent,
+    //     "user_33y4IdJtVCRtMnuhPQf2p"
+    //   )
+    //   .then(
+    //     response => {
+    //       console.log("SUCCESS!", response.status, response.text);
+    //     },
+    //     err => {
+    //       console.log("FAILED...", err);
+    //     }
+    //   );
   }
+
+
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// UI Level interaction
+
+
+    // Toggles the time PickyTime component
+    toggleTime = _ => this.setState(_ => ({ toggleTime: true }));
+
+    // Set the date entered by the user
+    onChangeDate = date => this.setState({ date });
+
+
 
   handleLaundry = cleaning => {
     this.setState({ cleaning });
@@ -101,7 +137,7 @@ class Calendar extends Component {
                   onMinuteChange={res =>
                     this.setState(_ => ({  minutes: res.value }))
                   }
-                  onSecondChange={res => 
+                  onSecondChange={res =>
                     this.setState(_ => ({ seconds: res.value }))
                   }
                 />
@@ -160,12 +196,12 @@ class Calendar extends Component {
                     required
                   />
                   <ToggleTimeButton onClick={this.toggleTime}>
-                    Choose Time
+                    välj tid
                   </ToggleTimeButton>
                 </Fragment>
               )}
 
-              <Boka state={this.state}>Att Boka</Boka>
+              <Boka onClick={this.doIt} state={this.state}>Att Boka</Boka>
             </RightSide>
           </FormWrapper>
         </DesignerModal>

@@ -9,7 +9,8 @@ const LastSection = _ => (
       <LeftSideTitle>IKDIENĀ MUMS UZTICAS</LeftSideTitle>
 
       <LeftSideCard>
-        <h1>One</h1>
+        <CompanyName>STOREX</CompanyName>
+        <CompanyLink href="https://storex.se/">Visit</CompanyLink>
       </LeftSideCard>
 
       <LeftSideCard>
@@ -85,5 +86,9 @@ const RightSideImage = styled.img`
     width: 700px;
   }
 `;
+
+const CompanyName = styled.h1``;
+
+const CompanyLink = styled.a``;
 
 export default LastSection;

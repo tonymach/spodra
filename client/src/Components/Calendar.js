@@ -126,21 +126,23 @@ class Calendar extends Component {
 
             <RightSide>
               {this.state.toggleTime ? (
-                <PickyDateTime
-                  size="xs"
-                  mode={2}
-                  show
-                  onClose={_ => this.setState(_ => ({ toggleTime: false }))}
-                  onHourChange={res =>
-                    this.setState(_ => ({ hours: res.value } ))
-                  }
-                  onMinuteChange={res =>
-                    this.setState(_ => ({  minutes: res.value }))
-                  }
-                  onSecondChange={res =>
-                    this.setState(_ => ({ seconds: res.value }))
-                  }
-                />
+                <TimePickerContainer>
+                  <PickyDateTime
+                    size="xs"
+                    mode={2}
+                    show
+                    onClose={_ => this.setState(_ => ({ toggleTime: false }))}
+                    onHourChange={res =>
+                      this.setState(_ => ({ hours: res.value } ))
+                    }
+                    onMinuteChange={res =>
+                      this.setState(_ => ({  minutes: res.value }))
+                    }
+                    onSecondChange={res =>
+                      this.setState(_ => ({ seconds: res.value }))
+                    }
+                  />
+                </TimePickerContainer>
               ) : (
                 <Fragment>
                   <SwitchWrapper>
@@ -217,9 +219,8 @@ class Calendar extends Component {
  */
 const ToggleTimeButton = styled.button`
   padding: 5px;
-  position: absolute;
-  left: 430px;
   margin-top: 20px;
+  margin-right: 200px;
   width: 200px;
   background: #4834d4;
   border: 0px;
@@ -240,8 +241,8 @@ const Title = styled.h6`
 
 const DesignerModal = styled.div`
   text-align: center;
-  width: 50vw;
-  height: 60vh;
+  width: 800px;
+  height: 500px;
 
   @media screen and (max-width: 1400px) {
   }
@@ -332,13 +333,7 @@ const Boka = styled.button`
   transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
 
   &:hover {
-    transform: translateY(-5px);
-    border-bottom: 10px solid #00bf6f;
-  }
-
-  &:active {
-    transform: translateY(1px);
-    border-bottom: 6px solid #00bf6f;
+    background: #4cd137;
   }
 
   &::-moz-focus-inner {
@@ -349,6 +344,11 @@ const Boka = styled.button`
 const FormWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 50%);
+`;
+
+const TimePickerContainer = styled.div`
+  margin-top: 50px;
+  margin-right: 100px;
 `;
 
 export default Calendar;

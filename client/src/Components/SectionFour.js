@@ -16,13 +16,9 @@ const SectionFour = ({ image }) => {
       <RightSide>
         <RightSideTitle>PRIS</RightSideTitle>
         <RightSideText>
-          Laiks ir naudas valūta. Mēs lietojam savu laiku,
+          Vi har rimliga priser och individuell 
           <br />
-          lai dabūtu naudu. Līdz ar to - jo izdevīgāk mēs
-          <br />
-          norēķināmies, jo mazāk laika esam pavadījuši, lai šo
-          <br />
-          naudu nopelnītu.
+          anpassning för varje kund och hans önskemål!
         </RightSideText>
       </RightSide>
     </SectionFourWrapper>
@@ -40,7 +36,7 @@ const SectionFourWrapper = styled.div`
 const LeftSide = styled.div`
   min-height: 120px;
   max-height: auto;
-  
+
   background-image: url(${({ bgImage }) => bgImage});
   background-repeat: no-repeat;
   background-position: center;
@@ -83,10 +79,10 @@ const LargeScale = styled.img`
   max-width: 80%;
   height: auto;
   margin-top: 200px;
-  margin-left: 200px;  
-  
+  margin-left: 200px;
+
   @media screen and (max-width: 1400px) {
-    margin-left: 230px;  
+    margin-left: 230px;
     max-width: 70%;
   }
 `;

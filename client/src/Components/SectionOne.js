@@ -7,15 +7,18 @@ const SectionOne = ({ image }) => {
       <LeftSide>
         <LeftSideTitle>VARFÖR VI?</LeftSideTitle>
         <LeftSideText>
-          Är det dags för dig att flytta? Då vill du förmodligen ha
+          Vi på Spodra Lux AB tänker först och främst 
           <br />
-          hjälp med flytten så att den blir både effektiv och
+          på våra KUNDER som från början är alltid nya 
           <br />
-          smidig. Ta hjälp av oss på Spodra LUX! Vi är nämligen
+          men vi strävar alltid efter att göra dem till våra 
           <br />
-          specialister på flytt och vi är en flyttfirma i Stockholm
+          stamkunder genom vår lilla men unika personlighet 
           <br />
-          med många års erfarenhet inom området.
+          och vår kända service. 
+          <br />
+          <br />
+          Ni önskar, Vi utför!
         </LeftSideText>
       </LeftSide>
 
@@ -32,7 +35,7 @@ const SectionOneWrapper = styled.div`
 `;
 
 const LeftSide = styled.div`
-  background: #10069F;
+  background: #10069f;
   height: 760px;
 
   @media screen and (max-width: 1400px) {
@@ -46,7 +49,7 @@ const LeftSideTitle = styled.h1`
   margin-top: 178px;
   margin-left: 118px;
   font-size: 0.8rem;
-  
+
   @media screen and (max-width: 1400px) {
     font-size: 0.5rem;
     margin-left: 75px;
@@ -64,7 +67,7 @@ const LeftSideText = styled.p`
   @media screen and (max-width: 1400px) {
     font-size: 0.5rem;
     margin-left: 75px;
-  } 
+  }
 `;
 
 const RightSide = styled.div`

@@ -17,15 +17,17 @@ const RelocationAssistance = ({ openModal }) => (
         <LeftSide>
           <LeftSideTextContainer>
             <LeftSideText>
-              Pārvākšanās mēdz būt ilgāka un neērtāka, kā esam
+              Är det dax att flytta? Då vill du 
               <br />
-              domājuši. Arī pa ceļam saskrāpētas mantas mēdz
+              förmogligen ha hjälp med flytten så att 
               <br />
-              pabojāt prieku par ienākšanu jaunajā vietā. Tādēļ lai
+              det blir effektiv och smidig. Ta hjälp 
               <br />
-              pārmaiņu brīdis būtu kā skaista sākums - uztieciet
+              av oss på Spodra LUX! Vi är nämligen 
               <br />
-              pārvadājumus mums.
+              specialister på flytt och städ. Vi är firman i
+              <br />
+              Stockholm med många års erfarenhet inom detta området.
             </LeftSideText>
             <LeftSideTitle onClick={openModal}>
               <u>UZTICĒT</u>
@@ -116,7 +118,13 @@ const LeftSideText = styled.p`
 const LeftSideTitle = styled.h1`
   color: white;
   font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
 
+  &:hover {
+    color: skyblue;
+  }
+  
   @media screen and (max-width: 1400px) {
     font-size: 0.5rem;
   }

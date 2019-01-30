@@ -16,13 +16,17 @@ const Cleaning = ({ openModal }) => (
         <LeftSide>
           <LeftSideTextContainer>
             <LeftSideText>
-              Dzīvojamo māju un komerctelpu uzkopšanu mēs 
+              Våra städare kan både jobba i privathus 
               <br />
-              pārzinām lieliski. Liela pieredze, inovatīvi kopšanas 
+              och kontorer och är utbildade på en super 
               <br />
-              līdzekļi un paši labākie darbinieki - tas mums 
+              bra nivå. Våra stjärnor är utbildade till 
               <br />
-              nodrošina reputāciju, par kuru varam būt lepni šodien.
+              storstädningar och kan utföra de mest 
+              <br />
+              komplicerade städningar inomhus. Allt 
+              <br />
+              städas ordentligt och detaljerat!
             </LeftSideText>
             <LeftSideTitle onClick={openModal}>
               <u>UZTICĒT</u>
@@ -50,7 +54,7 @@ const CleaningTitle = styled.h1`
   text-align: center;
   margin-left: 19px;
   margin-bottom: -150px;
-  
+
   @media screen and (max-width: 1400px) {
     font-size: 1.2rem;
     margin-bottom: -100px;
@@ -82,7 +86,7 @@ const LeftSideImage = styled.img`
   display: block;
   position: relative;
   margin-bottom: -320px;
-  
+
   @media screen and (max-width: 1400px) {
     margin-bottom: -250px;
     width: 400px;
@@ -112,6 +116,13 @@ const LeftSideText = styled.p`
 const LeftSideTitle = styled.h1`
   color: white;
   font-size: 0.8rem;
+
+  cursor: pointer;
+  transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  &:hover {
+    color: skyblue;
+  }
 `;
 
 const RightSide = styled.div`

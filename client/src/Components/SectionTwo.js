@@ -9,15 +9,15 @@ const SectionTwo = ({ image }) => {
       <LeftSide>
         <LeftSideTitle>TID</LeftSideTitle>
         <LeftSideText>
-          Reizi nedēļā tīrot māju 3 stundas mēs gadā vidēji 
+          Om vi städar 1 gång i veckan. Under 
           <br />
-          iztērējam 156
-          stundas!
+          ett år blir det 156 jobbtimmar
           <br />
+          totalt som ni kan spara, använda 
           <br />
-          156 stundas , kuras varētu pavadīt ar ģimeni, 
+          er av för andra roligare aktiviteter
           <br />
-          draugiem vai apgūstot ko jaunu!
+          och vara nöjda med städningen!
         </LeftSideText>
       </LeftSide>
 
@@ -52,7 +52,7 @@ const LeftSideTitle = styled.h1`
   @media screen and (max-width: 1400px) {
     font-size: 0.5rem;
   }
-  `;
+`;
 
 const LeftSideText = styled.p`
   margin-left: 100px;

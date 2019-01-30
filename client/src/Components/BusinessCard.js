@@ -21,7 +21,7 @@ const BusinessCard = _ => (
           <br />
           <CompanyLink
             target="__blank"
-            href="https://www.google.com/maps/place/L%C3%A4nnav%C3%A4gen+64,+141+46+Huddinge,+Sweden/@59.2265761,17.9966624,17z/data=!4m5!3m4!1s0x465f70bafc5951d3:0xbdcff0df1e87962a!8m2!3d59.2265734!4d17.9988511"
+            href="https://www.google.com/maps/place/Spodra+LUX+AB/@59.2254531,17.999009,17z/data=!4m13!1m7!3m6!1s0x465f70bb2f05cd47:0x4cb3a31abd7990a8!2sL%C3%A4nnav%C3%A4gen+113,+141+34+Huddinge!3b1!8m2!3d59.2254531!4d18.001203!3m4!1s0x465f70bb2f9d814b:0x9f0b75be2c8085be!8m2!3d59.2253339!4d18.0006111"
           >
             VISA GOOGLE MAPS
           </CompanyLink>

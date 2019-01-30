@@ -6,14 +6,17 @@ const SectionFive = ({ image, onClick }) => {
     <SectionFiveWrapper>
       <LeftSide />
       <RightSide>
-        <RightSideTitle>SAMARBETE</RightSideTitle>
+        <RightSideTitle>testa vår service</RightSideTitle>
         <RightSideText>
-          Lai pārbaudītu mūsu saderību, mēs piedāvājam
+          För att testa Spodras Lux’s städ hjälp 
           <br />
-          iepazīšanās cenu telpu tīrīšanai līdz 80<sub>m</sub>
-          <sup>2</sup>
+          med trygghet, så erbjuder vi
+          <br />
+          första städningen för bara 125kr i timmen. 
+          <br />
+          Vi garanterar en nöjd kund för ett bra pris!
         </RightSideText>
-        <LargeScale>156 kr.</LargeScale>
+        <LargeScale>125 kr.</LargeScale>
         <BookNowButton onClick={onClick}>Att Boka</BookNowButton>
       </RightSide>
     </SectionFiveWrapper>
@@ -42,6 +45,7 @@ const RightSideTitle = styled.h1`
 
 const RightSideText = styled.p`
   margin-top: 10vh;
+  margin-bottom: 5vh;
   font-family: "HK Grotesk Medium", sans-serif;
   font-size: 0.8rem;
   display: block;

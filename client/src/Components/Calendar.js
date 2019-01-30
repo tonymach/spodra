@@ -1,12 +1,12 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import styled from "styled-components";
 import Modal from "react-responsive-modal";
 import * as emailjs from "emailjs-com";
 import Switch from "react-switch";
 import { Calendar as ExternalCalendar } from "react-calendar";
+import PickyDateTime from "react-picky-date-time";
 
 // import moment from "moment";
-// import DateTimePicker from "react-datetime-picker";
 
 class Calendar extends Component {
   constructor(props) {
@@ -18,13 +18,21 @@ class Calendar extends Component {
       moving: false,
       garden: false,
       checked: false,
-      phone: ""
+      phone: "",
+      hours: null,
+      minutes: null,
+      seconds: null,
+      toggleTime: false
     };
   }
 
+  // Toggles the time PickyTime component
+  toggleTime = _ => this.setState(_ => ({ toggleTime: true }));
+
+  // Set the date entered by the user
   onChangeDate = date => this.setState({ date });
 
-  // This sends an email of the state above to the @info email
+  // Sends an email of the state above to the @info email
   doIt(e, state) {
     e.preventDefault();
     emailjs
@@ -71,9 +79,8 @@ class Calendar extends Component {
       <Modal open={this.props.open} onClose={this.props.onClose} center>
         <DesignerModal>
           <Title>ANGE DATUM, TID, SERVICE OCH KONTAKTUPPGIFTER</Title>
-          
-          <FormWrapper>
 
+          <FormWrapper>
             <LeftSide>
               <ExternalCalendar
                 className="calendar"
@@ -82,64 +89,85 @@ class Calendar extends Component {
             </LeftSide>
 
             <RightSide>
-              <SwitchWrapper>
-                <SwitchLabel htmlFor="cleaning">
-                  <Switch
-                    width={60}
-                    height={30}
-                    offColor="#808080"
-                    onColor="#10069F"
-                    onChange={this.handleLaundry}
-                    checked={this.state.cleaning}
-                    id="cleaning-switch"
+              {this.state.toggleTime ? (
+                <PickyDateTime
+                  size="xs"
+                  mode={2}
+                  show
+                  onClose={_ => this.setState(_ => ({ toggleTime: false }))}
+                  onHourChange={res =>
+                    this.setState(_ => ({ hours: res.value } ))
+                  }
+                  onMinuteChange={res =>
+                    this.setState(_ => ({  minutes: res.value }))
+                  }
+                  onSecondChange={res => 
+                    this.setState(_ => ({ seconds: res.value }))
+                  }
+                />
+              ) : (
+                <Fragment>
+                  <SwitchWrapper>
+                    <SwitchLabel htmlFor="cleaning">
+                      <Switch
+                        width={60}
+                        height={30}
+                        offColor="#808080"
+                        onColor="#10069F"
+                        onChange={this.handleLaundry}
+                        checked={this.state.cleaning}
+                        id="cleaning-switch"
+                      />
+                      <SSpan>STÄDHJÄLP</SSpan>
+                    </SwitchLabel>
+                    <SwitchLabel htmlFor="moving">
+                      <Switch
+                        width={60}
+                        height={30}
+                        offColor="#808080"
+                        onColor="#10069F"
+                        onChange={this.handleMoving}
+                        checked={this.state.moving}
+                        id="moving-switch"
+                      />
+                      <SSpan>FLYTTHJÄLP</SSpan>
+                    </SwitchLabel>
+                    <SwitchLabel htmlFor="garden">
+                      <Switch
+                        width={60}
+                        height={30}
+                        offColor="#808080"
+                        onColor="#10069F"
+                        onChange={this.handleGarden}
+                        checked={this.state.garden}
+                        id="garden-switch"
+                      />
+                      <SSpan>TRÄDGÅRD</SSpan>
+                    </SwitchLabel>
+                  </SwitchWrapper>
+                  <InputNoTop
+                    value={this.state.phone}
+                    onChange={this.handlePhone}
+                    placeholder="DITT TELEFONNUMMER"
+                    type="phone"
+                    required
                   />
-                  <SSpan>STÄDHJÄLP</SSpan>
-                </SwitchLabel>
-                <SwitchLabel htmlFor="moving">
-                  <Switch
-                    width={60}
-                    height={30}
-                    offColor="#808080"
-                    onColor="#10069F"
-                    onChange={this.handleMoving}
-                    checked={this.state.moving}
-                    id="moving-switch"
+                  <InputNoTop
+                    value={this.state.email}
+                    onChange={this.handleEmail}
+                    placeholder="ELLER E-POSTADRESS"
+                    type="email"
+                    required
                   />
-                  <SSpan>FLYTTHJÄLP</SSpan>
-                </SwitchLabel>
-                <SwitchLabel htmlFor="garden">
-                  <Switch
-                    width={60}
-                    height={30}
-                    offColor="#808080"
-                    onColor="#10069F"
-                    onChange={this.handleGarden}
-                    checked={this.state.garden}
-                    id="garden-switch"
-                  />
-                  <SSpan>TRÄDGÅRD</SSpan>
-                </SwitchLabel>
-              </SwitchWrapper>
-              <InputNoTop
-                value={this.state.phone}
-                onChange={this.handlePhone}
-                placeholder="DITT TELEFONNUMMER"
-                type="phone"
-                required
-              />
-              <InputNoTop
-                value={this.state.email}
-                onChange={this.handleEmail}
-                placeholder="ELLER E-POSTADRESS"
-                type="email"
-                required
-              />
+                  <ToggleTimeButton onClick={this.toggleTime}>
+                    Choose Time
+                  </ToggleTimeButton>
+                </Fragment>
+              )}
 
               <Boka state={this.state}>Att Boka</Boka>
             </RightSide>
-            
           </FormWrapper>
-
         </DesignerModal>
       </Modal>
     );
@@ -151,16 +179,34 @@ class Calendar extends Component {
  * Styled Components
  *
  */
+const ToggleTimeButton = styled.button`
+  padding: 5px;
+  position: absolute;
+  left: 430px;
+  margin-top: 20px;
+  width: 200px;
+  background: #4834d4;
+  border: 0px;
+  color: white;
+  height: 50px;
+  cursor: pointer;
+  outline: 0;
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+`;
+
 const Title = styled.h6`
   margin: 2px;
   color: #cccccc;
-  `;
+`;
 
 const DesignerModal = styled.div`
   text-align: center;
   width: 50vw;
   height: 60vh;
-  
+
   @media screen and (max-width: 1400px) {
   }
 `;
@@ -174,7 +220,7 @@ const LeftSide = styled.div`
     width: 350px;
     margin-top: 40px;
     padding: 10px;
-    
+
     @media screen and (max-width: 1400px) {
       margin-top: 40px;
       padding: 10px;

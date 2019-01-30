@@ -112,6 +112,12 @@ const LeftSideText = styled.p`
 const LeftSideTitle = styled.h1`
   color: white;
   font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  &:hover {
+    color: skyblue;
+  }
 
   @media screen and (max-width: 1400px) {
     font-size: 0.5rem;

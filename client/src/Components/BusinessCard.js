@@ -15,7 +15,7 @@ const BusinessCard = _ => (
           <br />
           <CompanyInfo>Lännavägen 113, 141 46 Huddinge</CompanyInfo>
           <CompanyInfo>Tel: 070 741 37 72</CompanyInfo>
-          <CompanyInfo>Tel: 070 082 119 87</CompanyInfo>
+          <CompanyInfo>Tel: 070 082 19 87</CompanyInfo>
           <CompanyInfo>E-post: info@spodra.se</CompanyInfo>
           <br />
           <br />

@@ -5,7 +5,7 @@ import lastImageURL from "../Assets/Images/lastImage2x.png";
 const LastSection = _ => (
   <Wrapper>
     <LeftSide>
-      <LeftSideTitle>IKDIENĀ MUMS UZTICAS</LeftSideTitle>
+      <LeftSideTitle>Ni önskar, Vi utför!</LeftSideTitle>
 
       <LeftSideCard>
         <CompanyLink target="__blank" href="https://storex.se/">

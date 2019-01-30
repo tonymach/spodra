@@ -16,12 +16,15 @@ const Garden = ({ openModal }) => (
         <LeftSide>
           <LeftSideTextContainer>
             <LeftSideText>
-              Augi ir mūsu miera oāze ikdienas steigā. Uzturēt
+              Växter är vår en oas av fred i den 
               <br />
-              pašam savu dārzu vairs nav jābūt ekstrai, jo mūsu
+              dagliga bråttom. Upprätthålla din egen 
               <br />
-              dārzkopji ir apveltīti ar izcilām iemaņām un pieredzi!
+              trädgård bör inte längre vara ekstrai, 
               <br />
+              i vår odlare är utrustade med utmärkta 
+              <br />
+              färdigheter och erfarenhet!
             </LeftSideText>
             <LeftSideTitle onClick={openModal}>
               <u>UZTICĒT</u>

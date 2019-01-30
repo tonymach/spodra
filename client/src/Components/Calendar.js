@@ -22,40 +22,34 @@ class Calendar extends Component {
       hours: null,
       minutes: null,
       seconds: null,
-      toggleTime: false
+      toggleTime: false,
+      sent: false
     };
-    this.doIt = this.doIt.bind(this);
   }
 
   //
-
-
 
   boolCleaning(bool) {
     if (bool) return " Ja";
     return " Nej";
   }
 
-
-  filterWords () {
-
+  filterWords() {
     var t = this.state;
     var f = this.state;
     f.cleaning = this.boolCleaning(t.cleaning);
     f.moving = this.boolCleaning(t.moving);
     f.garden = this.boolCleaning(t.garden);
     moment.locale("sv");
-    f.date =  moment(t.date).format("MMM Do YY");               // Jan 30th 19
-    return(f);
-
+    f.date = moment(t.date).format("MMM Do YY"); // Jan 30th 19
+    return f;
   }
 
   // Sends an email of the state above to the @info email
-  doIt(e) {
+  doIt = e => {
     e.preventDefault();
 
     const twoPrecent = this.filterWords();
-    console.log(twoPrecent);
     emailjs
       .send(
         "mailgun",
@@ -66,27 +60,22 @@ class Calendar extends Component {
       .then(
         response => {
           console.log("SUCCESS!", response.status, response.text);
+          this.setState(_ => ({ sent: true }));
         },
         err => {
           console.log("FAILED...", err);
         }
       );
-  }
+  };
 
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  // UI Level interaction
 
+  // Toggles the time PickyTime component
+  toggleTime = _ => this.setState(_ => ({ toggleTime: true }));
 
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// UI Level interaction
-
-
-    // Toggles the time PickyTime component
-    toggleTime = _ => this.setState(_ => ({ toggleTime: true }));
-
-    // Set the date entered by the user
-    onChangeDate = date => this.setState({ date });
-
-
+  // Set the date entered by the user
+  onChangeDate = date => this.setState({ date });
 
   handleLaundry = cleaning => {
     this.setState({ cleaning });
@@ -112,7 +101,13 @@ class Calendar extends Component {
     console.log(this.state);
 
     return (
-      <Modal open={this.props.open} onClose={this.props.onClose} center>
+      <Modal
+        open={this.props.open && !this.state.sent}
+        closeOnEsc
+        showCloseIcon
+        onClose={this.props.onClose}
+        center
+      >
         <DesignerModal>
           <Title>ANGE DATUM, TID, SERVICE OCH KONTAKTUPPGIFTER</Title>
 
@@ -133,10 +128,10 @@ class Calendar extends Component {
                     show
                     onClose={_ => this.setState(_ => ({ toggleTime: false }))}
                     onHourChange={res =>
-                      this.setState(_ => ({ hours: res.value } ))
+                      this.setState(_ => ({ hours: res.value }))
                     }
                     onMinuteChange={res =>
-                      this.setState(_ => ({  minutes: res.value }))
+                      this.setState(_ => ({ minutes: res.value }))
                     }
                     onSecondChange={res =>
                       this.setState(_ => ({ seconds: res.value }))
@@ -203,7 +198,9 @@ class Calendar extends Component {
                 </Fragment>
               )}
 
-              <Boka onClick={this.doIt} state={this.state}>Att Boka</Boka>
+              <Boka onClick={this.doIt} state={this.state}>
+                Att Boka
+              </Boka>
             </RightSide>
           </FormWrapper>
         </DesignerModal>

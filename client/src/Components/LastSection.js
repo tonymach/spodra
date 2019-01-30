@@ -8,14 +8,22 @@ const LastSection = _ => (
       <LeftSideTitle>IKDIENĀ MUMS UZTICAS</LeftSideTitle>
 
       <LeftSideCard>
-        <CompanyLink href="https://storex.se/"><ImageCard src="https://storex.se/wp-content/uploads/2017/01/Storex_logo-3.png"/></CompanyLink>
+        <CompanyLink target="__blank" href="https://storex.se/">
+          <ImageCard src="https://storex.se/wp-content/uploads/2017/01/Storex_logo-3.png" />
+        </CompanyLink>
       </LeftSideCard>
 
       <LeftSideCard>
-        <CompanyLink href="https://easyflat.se/"><ImageCard src="http://www.easyflat.se/wp-content/uploads/2016/12/custom-logo-300x64.png"/></CompanyLink>      </LeftSideCard>
+        <CompanyLink target="__blank" href="https://easyflat.se/">
+          <ImageCard src="http://www.easyflat.se/wp-content/uploads/2016/12/custom-logo-300x64.png" />
+        </CompanyLink>{" "}
+      </LeftSideCard>
 
       <LeftSideCard>
-        <CompanyLink href="https://smartbox.se/"><ImageCard src="https://www.smartbox.se/imgs/brandstyle/smartbox/logo.svg"/></CompanyLink>      </LeftSideCard>
+        <CompanyLink target="__blank" href="https://smartbox.se/">
+          <ImageCard src="https://www.smartbox.se/imgs/brandstyle/smartbox/logo.svg" />
+        </CompanyLink>{" "}
+      </LeftSideCard>
     </LeftSide>
 
     <RightSide>
@@ -61,17 +69,14 @@ const LeftSideTitle = styled.h1`
 const LeftSideCard = styled.div`
   height: 100px;
   width: 260px;
-  background: #cccccc;
-  margin-bottom: 16px;
-  margin-right: 20px;
+  margin-bottom: 50px;
 `;
 
 const RightSide = styled.div`
   position: relative;
   height: auto;
   width: auto;
-
-  `;
+`;
 
 const RightSideImage = styled.img`
   position: absolute;
@@ -84,11 +89,9 @@ const RightSideImage = styled.img`
 `;
 
 const ImageCard = styled.img`
-  margin-top:7%;
-  max-width:100%;
-
+  margin-top: 7%;
+  max-width: 100%;
 `;
-
 
 const CompanyName = styled.h1``;
 

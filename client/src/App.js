@@ -22,7 +22,7 @@ import image3 from "./images/2.jpg";
 
 export default class App extends Component {
   state = {
-    open: true
+    open: false
   };
 
   onOpenModal = () => {

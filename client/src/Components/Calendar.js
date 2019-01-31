@@ -3,10 +3,19 @@ import styled from "styled-components";
 import Modal from "react-responsive-modal";
 import * as emailjs from "emailjs-com";
 import Switch from "react-switch";
-import { Calendar as ExternalCalendar } from "react-calendar";
-import PickyDateTime from "react-picky-date-time";
+import TimePicker from 'react-times';
 import moment from "moment";
-// import moment from "moment";
+
+import DayPicker from 'react-day-picker';
+import 'react-day-picker/lib/style.css';
+
+// Include the locale utils designed for moment
+import MomentLocaleUtils from 'react-day-picker/moment';
+
+// Make sure moment.js has the required locale data
+import 'moment/locale/sv';
+
+import 'react-times/css/material/default.css';// import moment from "moment";
 
 class Calendar extends Component {
   constructor(props) {
@@ -19,14 +28,27 @@ class Calendar extends Component {
       garden: false,
       checked: false,
       phone: "",
-      hours: null,
-      minutes: null,
-      seconds: null,
-      toggleTime: false,
-      sent: false
+      sent: false,
+      hour: '11',
+      minute: '50',
+      meridiem: '',
+      focused:'',
+      timezone:'',
+            selectedDay: undefined,
     };
-  }
 
+    this.handleDayClick = this.handleDayClick.bind(this);
+}
+
+
+handleDayClick(day, { selected }) {
+   if (selected) {
+     // Unselect the day if already selected
+     this.setState({ date: undefined });
+     return;
+   }
+   this.setState({ date: day });
+ }
   //
 
   boolCleaning(bool) {
@@ -71,8 +93,24 @@ class Calendar extends Component {
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   // UI Level interaction
 
-  // Toggles the time PickyTime component
-  toggleTime = _ => this.setState(_ => ({ toggleTime: true }));
+
+
+  onTimeChange(options) {
+    console.log(options);
+    const {
+        hour,
+        minute,
+        meridiem
+      } = options;
+      console.log(hour);
+      this.setState({'hour':hour});
+      this.setState({'minute':minute});
+
+      }
+
+  onFocusChange(focusStatue) {
+    // do something
+  }
 
   // Set the date entered by the user
   onChangeDate = date => this.setState({ date });
@@ -98,8 +136,11 @@ class Calendar extends Component {
   };
 
   render() {
-    console.log(this.state);
+    const {
+  hour,
+  minute,
 
+} = this.state;
     return (
       <Modal
         open={this.props.open && !this.state.sent}
@@ -113,33 +154,22 @@ class Calendar extends Component {
 
           <FormWrapper>
             <LeftSide>
-              <ExternalCalendar
-                className="calendar"
-                onChange={this.onChangeDate}
-              />
+
+              <DayPicker
+                onDayClick={this.handleDayClick}
+               selectedDays={this.state.date}
+               locale="sv"
+               localeUtils={MomentLocaleUtils}
+                  />
+              <TimePicker
+                  onTimeChange={this.onTimeChange.bind(this)}
+                   time={hour && minute ? `${hour}:${minute}` : null}
+                   colorPalette="dark"
+                />
             </LeftSide>
 
             <RightSide>
-              {this.state.toggleTime ? (
-                <TimePickerContainer>
-                  <PickyDateTime
-                    size="xs"
-                    mode={2}
-                    show
-                    locale="en-us"
-                    onClose={_ => this.setState(_ => ({ toggleTime: false }))}
-                    onHourChange={res =>
-                      this.setState(_ => ({ hours: res.value }))
-                    }
-                    onMinuteChange={res =>
-                      this.setState(_ => ({ minutes: res.value }))
-                    }
-                    onSecondChange={res =>
-                      this.setState(_ => ({ seconds: res.value }))
-                    }
-                  />
-                </TimePickerContainer>
-              ) : (
+
                 <Fragment>
                   <SwitchWrapper>
                     <SwitchLabel htmlFor="cleaning">
@@ -193,11 +223,9 @@ class Calendar extends Component {
                     type="email"
                     required
                   />
-                  <ToggleTimeButton onClick={this.toggleTime}>
-                    välj tid
-                  </ToggleTimeButton>
+
                 </Fragment>
-              )}
+
 
               <Boka onClick={this.doIt} state={this.state}>
                 Att Boka
@@ -249,6 +277,7 @@ const DesignerModal = styled.div`
 const LeftSide = styled.div`
   width: 100%;
   height: 100%;
+  padding-top:40px;
 
   .calendar {
     height: 400px;

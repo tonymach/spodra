@@ -5,6 +5,7 @@ import * as emailjs from "emailjs-com";
 import Switch from "react-switch";
 import TimePicker from 'react-times';
 import moment from "moment";
+import swal from 'sweetalert';
 
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
@@ -34,7 +35,8 @@ class Calendar extends Component {
       meridiem: '',
       focused:'',
       timezone:'',
-            selectedDay: undefined,
+      selectedDay: undefined,
+      disabled: false
     };
 
     this.handleDayClick = this.handleDayClick.bind(this);
@@ -70,24 +72,25 @@ handleDayClick(day, { selected }) {
   // Sends an email of the state above to the @info email
   doIt = e => {
     e.preventDefault();
-
+    this.setState({disabled:true});
     const twoPrecent = this.filterWords();
-    emailjs
-      .send(
-        "mailgun",
-        "template_qSXVYhqQ",
-        twoPrecent,
-        "user_33y4IdJtVCRtMnuhPQf2p"
-      )
-      .then(
-        response => {
-          console.log("SUCCESS!", response.status, response.text);
-          this.setState(_ => ({ sent: true }));
-        },
-        err => {
-          console.log("FAILED...", err);
-        }
-      );
+    swal("Skickat!", "fantastisk", "success");
+    // emailjs
+    //   .send(
+    //     "mailgun",
+    //     "template_qSXVYhqQ",
+    //     twoPrecent,
+    //     "user_33y4IdJtVCRtMnuhPQf2p"
+    //   )
+    //   .then(
+    //     response => {
+    //       console.log("SUCCESS!", response.status, response.text);
+    //       this.setState(_ => ({ sent: true }));
+    //     },
+    //     err => {
+    //       console.log("FAILED...", err);
+    //     }
+    //   );
   };
 
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -142,6 +145,7 @@ handleDayClick(day, { selected }) {
 
 } = this.state;
     return (
+
       <Modal
         open={this.props.open && !this.state.sent}
         closeOnEsc
@@ -149,6 +153,7 @@ handleDayClick(day, { selected }) {
         onClose={this.props.onClose}
         center
       >
+
         <DesignerModal>
           <Title>ANGE DATUM, TID, SERVICE OCH KONTAKTUPPGIFTER</Title>
 
@@ -227,7 +232,7 @@ handleDayClick(day, { selected }) {
                 </Fragment>
 
 
-              <Boka onClick={this.doIt} state={this.state}>
+              <Boka onClick={this.doIt} state={this.state} disabled={this.state.disabled}>
                 Att Boka
               </Boka>
             </RightSide>

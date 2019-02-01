@@ -7,15 +7,15 @@ const SectionOne = ({ image }) => {
       <LeftSide>
         <LeftSideTitle>VARFÖR VI?</LeftSideTitle>
         <LeftSideText>
-          Vi på Spodra Lux AB tänker först och främst 
+          Vi på Spodra Lux AB tänker först och främst
           <br />
-          på våra KUNDER som från början är alltid nya 
+          på våra KUNDER som från början är alltid nya
           <br />
-          men vi strävar alltid efter att göra dem till våra 
+          men vi strävar alltid efter att göra dem till våra
           <br />
-          stamkunder genom vår lilla men unika personlighet 
+          stamkunder genom vår lilla men unika personlighet
           <br />
-          och vår kända service. 
+          och vår kända service.
           <br />
           <br />
           Ni önskar, Vi utför!

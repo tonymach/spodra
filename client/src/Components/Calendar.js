@@ -75,22 +75,22 @@ handleDayClick(day, { selected }) {
     this.setState({disabled:true});
     const twoPrecent = this.filterWords();
     swal("Skickat!", "fantastisk", "success");
-    // emailjs
-    //   .send(
-    //     "mailgun",
-    //     "template_qSXVYhqQ",
-    //     twoPrecent,
-    //     "user_33y4IdJtVCRtMnuhPQf2p"
-    //   )
-    //   .then(
-    //     response => {
-    //       console.log("SUCCESS!", response.status, response.text);
-    //       this.setState(_ => ({ sent: true }));
-    //     },
-    //     err => {
-    //       console.log("FAILED...", err);
-    //     }
-    //   );
+    emailjs
+      .send(
+        "mailgun",
+        "template_qSXVYhqQ",
+        twoPrecent,
+        "user_33y4IdJtVCRtMnuhPQf2p"
+      )
+      .then(
+        response => {
+          console.log("SUCCESS!", response.status, response.text);
+          this.setState(_ => ({ sent: true }));
+        },
+        err => {
+          console.log("FAILED...", err);
+        }
+      );
   };
 
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

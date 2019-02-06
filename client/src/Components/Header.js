@@ -39,14 +39,22 @@ const ContentWrapper = styled.div`
 
 const HeaderContainer = styled.div`
   display: grid;
-  grid-template-columns: 60% 20%;
+  grid-template-columns: 50% 20%;
   align-items: center;
   justify-items: normal;
+
+  @media only screen and (max-width: 1340px) {
+    grid-template-columns: 40% 60%;
+  }
 `;
 
 const Logo = styled.img`
   height: 40px;
-  margin-left: 140px;
+  margin-left: 5em;
+
+  @media only screen and (max-width: 1340px) {
+    margin-left: 2em;
+  }
 `;
 
 const BokaWrapper = styled.div`

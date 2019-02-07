@@ -1,94 +1,51 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
-import PDF from "react-pdf-js";
+import Viewer from "react-viewer";
+import "react-viewer/dist/index.css";
 
-import Modal from "./Modal";
-import Toggle from "../Utils/Toggle";
-import PrisPDF from "../Assets/Files/pris.pdf";
+import PrisOne from "../Assets/Files/pris-1.jpg";
+import PrisTwo from "../Assets/Files/pris-2.jpg";
 
-const Navigation = _ => {
-  const [page, setPage] = useState(null);
-  const [pages, setPages] = useState(null);
-
-  // Functions
-  const onDocumentComplete = pages => {
-    setPage(1);
-    setPages(pages);
-  };
-
-  const handlePrevious = _ => setPage(currentPage => page - 1);
-  const handleNext = _ => setPage(currentPage => currentPage + 1);
-
-  // Pagination rendering logic
-  const renderPagination = (page, pages) => {
-    let previousButton = <button onClick={handlePrevious}>Previous</button>;
-    let nextButton = <button onClick={handleNext}>Next</button>;
-
-    if (page === 1)
-      previousButton = (
-        <button disabled onClick={handlePrevious}>
-          Previous
-        </button>
-      );
-
-    if (page === pages)
-      nextButton = (
-        <button disabled onClick={handleNext}>
-          Next
-        </button>
-      );
-
+class Navigation extends Component {
+  state = { isVisible: false };
+  
+  render() {
     return (
-      <nav>
-        <ul>
-          {previousButton}
-          {nextButton}
-        </ul>
-      </nav>
+      <NavigationWrapper>
+        <List>
+          <ListItem>
+            <Link href="#cleaning">STÄDHJÄLP</Link>
+          </ListItem>
+
+          <ListItem>
+            <Link href="#relocationAssistance">FLYTTHJÄLP</Link>
+          </ListItem>
+
+          <ListItem>
+            <Link href="#garden">TRÄDGÅRD</Link>
+          </ListItem>
+
+          <ListItem>
+            {this.state.isVisible ? (
+              <Viewer
+                images={[
+                  { src: PrisOne, alt: "Pris One" },
+                  { src: PrisTwo, alt: "Pris Two" }
+                ]}
+                visible={this.state.isVisible}
+                zoomable
+                drag={false}
+                onClose={_ => this.setState(_ => ({ isVisible: false }))}
+              />
+            ) : (
+              <PrisButton onClick={_ => this.setState(_ => ({ isVisible: true }))}>Pris</PrisButton>
+            )}
+          </ListItem>
+        </List>
+      </NavigationWrapper>
     );
-  };
-
-  // Handle the pagination render
-  let pagination = null;
-  if (pages) pagination = renderPagination(page, pages);
-
-  return (
-    <NavigationWrapper>
-      <List>
-        <ListItem>
-          <Link href="#cleaning">STÄDHJÄLP</Link>
-        </ListItem>
-
-        <ListItem>
-          <Link href="#relocationAssistance">FLYTTHJÄLP</Link>
-        </ListItem>
-
-        <ListItem>
-          <Link href="#garden">TRÄDGÅRD</Link>
-        </ListItem>
-
-        <ListItem>
-          <Toggle>
-            {({ on, toggle }) =>
-              on ? (
-                <Modal toggle={toggle}>
-                  <PDF
-                    file={PrisPDF}
-                    page={page}
-                    onDocumentComplete={onDocumentComplete}
-                  />
-                  {pagination}
-                </Modal>
-              ) : (
-                <PrisButton onClick={toggle}>Pris</PrisButton>
-              )
-            }
-          </Toggle>
-        </ListItem>
-      </List>
-    </NavigationWrapper>
-  );
-};
+  }
+}
 
 /**
  *

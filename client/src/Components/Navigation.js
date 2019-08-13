@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link as ScrollLink } from "react-scroll";
 import styled from "styled-components";
 import Viewer from "react-viewer";
 import "react-viewer/dist/index.css";
@@ -8,21 +9,27 @@ import PrisTwo from "../Assets/Files/pris-2.jpg";
 
 class Navigation extends Component {
   state = { isVisible: false };
-  
+
   render() {
     return (
       <NavigationWrapper>
         <List>
           <ListItem>
-            <Link href="#cleaning">STÄDHJÄLP</Link>
+            <ScrollLink to="first">
+              <Link>STÄDHJÄLP</Link>
+            </ScrollLink>
           </ListItem>
 
           <ListItem>
-            <Link href="#relocationAssistance">FLYTTHJÄLP</Link>
+            <ScrollLink to="second">
+              <Link>FLYTTHJÄLP</Link>
+            </ScrollLink>
           </ListItem>
 
           <ListItem>
-            <Link href="#garden">TRÄDGÅRD</Link>
+            <ScrollLink to="third">
+              <Link>TRÄDGÅRD</Link>
+            </ScrollLink>
           </ListItem>
 
           <ListItem>
@@ -38,7 +45,11 @@ class Navigation extends Component {
                 onClose={_ => this.setState(_ => ({ isVisible: false }))}
               />
             ) : (
-              <PrisButton onClick={_ => this.setState(_ => ({ isVisible: true }))}>Pris</PrisButton>
+              <PrisButton
+                onClick={_ => this.setState(_ => ({ isVisible: true }))}
+              >
+                Pris
+              </PrisButton>
             )}
           </ListItem>
         </List>

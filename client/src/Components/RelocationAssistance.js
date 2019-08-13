@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { Element } from "react-scroll";
 
 import ImageTwo from "../Assets/Images/02@2x.png";
 import BackgroundImage from "../images/3.jpg";
 
 const RelocationAssistance = ({ openModal }) => (
   <RelocationAssistanceWrapper>
-    <button id="relocationAssistance" />
+    <Element name="second" />
     <RelocationAssistanceTitle>FLYTTHJÄLP</RelocationAssistanceTitle>
 
     <RelocationAssistanceContainer>
@@ -17,13 +18,13 @@ const RelocationAssistance = ({ openModal }) => (
         <LeftSide>
           <LeftSideTextContainer>
             <LeftSideText>
-              Är det dax att flytta? Då vill du 
+              Är det dax att flytta? Då vill du
               <br />
-              förmogligen ha hjälp med flytten så att 
+              förmogligen ha hjälp med flytten så att
               <br />
-              det blir effektiv och smidig. Ta hjälp 
+              det blir effektiv och smidig. Ta hjälp
               <br />
-              av oss på Spodra LUX! Vi är nämligen 
+              av oss på Spodra LUX! Vi är nämligen
               <br />
               specialister på flytt och städ. Vi är firman i
               <br />
@@ -124,7 +125,7 @@ const LeftSideTitle = styled.h1`
   &:hover {
     color: skyblue;
   }
-  
+
   @media screen and (max-width: 1400px) {
     font-size: 0.5rem;
   }

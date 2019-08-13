@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { Element } from "react-scroll";
 
 import ImageThree from "../Assets/Images/03@2x.png";
 import BackgroundImage from "../images/5.jpg";
 
 const Garden = ({ openModal }) => (
   <GardenWrapper>
-    <a id="garden"></a>
+    <Element name="third" />
     <GardenTitle>TRÄDGÅRD</GardenTitle>
 
     <GardenContainer>
@@ -16,13 +17,13 @@ const Garden = ({ openModal }) => (
         <LeftSide>
           <LeftSideTextContainer>
             <LeftSideText>
-              Växter är vår en oas av fred i den 
+              Växter är vår en oas av fred i den
               <br />
-              dagliga bråttom. Upprätthålla din egen 
+              dagliga bråttom. Upprätthålla din egen
               <br />
-              trädgård bör inte längre vara ekstrai, 
+              trädgård bör inte längre vara ekstrai,
               <br />
-              i vår odlare är utrustade med utmärkta 
+              i vår odlare är utrustade med utmärkta
               <br />
               färdigheter och erfarenhet!
             </LeftSideText>

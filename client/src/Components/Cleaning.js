@@ -1,42 +1,45 @@
-import React from "react";
+import React, { Fragment } from "react";
 import styled from "styled-components";
+import { Element } from "react-scroll";
 
 import ImageOne from "../Assets/Images/01@2x.png";
 import BackgroundImage from "../images/7.jpg";
 
 const Cleaning = ({ openModal }) => (
-  <CleaningWrapper>
-    <button id="cleaning" />
-    <CleaningTitle>STÄDHJÄLP</CleaningTitle>
+  <Fragment>
+    <Element name="first" />
+    <CleaningWrapper>
+      <CleaningTitle>STÄDHJÄLP</CleaningTitle>
 
-    <CleaningContainer>
-      <LeftSideImage src={ImageOne} alt="bigImage" />
+      <CleaningContainer>
+        <LeftSideImage src={ImageOne} alt="bigImage" />
 
-      <MainContainer>
-        <LeftSide>
-          <LeftSideTextContainer>
-            <LeftSideText>
-              Våra städare kan både jobba i privathus 
-              <br />
-              och kontorer och är utbildade på en super 
-              <br />
-              bra nivå. Våra stjärnor är utbildade till 
-              <br />
-              storstädningar och kan utföra de mest 
-              <br />
-              komplicerade städningar inomhus. Allt 
-              <br />
-              städas ordentligt och detaljerat!
-            </LeftSideText>
-            <LeftSideTitle onClick={openModal}>
-              <u>BOKA</u>
-            </LeftSideTitle>
-          </LeftSideTextContainer>
-        </LeftSide>
-        <RightSide image={BackgroundImage} />
-      </MainContainer>
-    </CleaningContainer>
-  </CleaningWrapper>
+        <MainContainer>
+          <LeftSide>
+            <LeftSideTextContainer>
+              <LeftSideText>
+                Våra städare kan både jobba i privathus
+                <br />
+                och kontorer och är utbildade på en super
+                <br />
+                bra nivå. Våra stjärnor är utbildade till
+                <br />
+                storstädningar och kan utföra de mest
+                <br />
+                komplicerade städningar inomhus. Allt
+                <br />
+                städas ordentligt och detaljerat!
+              </LeftSideText>
+              <LeftSideTitle onClick={openModal}>
+                <u>BOKA</u>
+              </LeftSideTitle>
+            </LeftSideTextContainer>
+          </LeftSide>
+          <RightSide image={BackgroundImage} />
+        </MainContainer>
+      </CleaningContainer>
+    </CleaningWrapper>
+  </Fragment>
 );
 
 /**

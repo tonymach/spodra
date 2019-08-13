@@ -70,7 +70,7 @@ const BokaWrapper = styled.div`
   &:hover {
     background: #019c5b;
   }
-  
+
   @media screen and (max-width: 1250px) {
     width: 430px;
   }

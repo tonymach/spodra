@@ -3,20 +3,20 @@ import styled from "styled-components";
 import Modal from "react-responsive-modal";
 import * as emailjs from "emailjs-com";
 import Switch from "react-switch";
-import TimePicker from 'react-times';
+import TimePicker from "react-times";
 import moment from "moment";
-import swal from 'sweetalert';
+import swal from "sweetalert";
 
-import DayPicker from 'react-day-picker';
-import 'react-day-picker/lib/style.css';
+import DayPicker from "react-day-picker";
+import "react-day-picker/lib/style.css";
 
 // Include the locale utils designed for moment
-import MomentLocaleUtils from 'react-day-picker/moment';
+import MomentLocaleUtils from "react-day-picker/moment";
 
 // Make sure moment.js has the required locale data
-import 'moment/locale/sv';
+import "moment/locale/sv";
 
-import 'react-times/css/material/default.css';// import moment from "moment";
+import "react-times/css/material/default.css"; // import moment from "moment";
 
 class Calendar extends Component {
   constructor(props) {
@@ -30,27 +30,26 @@ class Calendar extends Component {
       checked: false,
       phone: "",
       sent: false,
-      hour: '11',
-      minute: '50',
-      meridiem: '',
-      focused:'',
-      timezone:'',
+      hour: "11",
+      minute: "50",
+      meridiem: "",
+      focused: "",
+      timezone: "",
       selectedDay: undefined,
       disabled: false
     };
 
     this.handleDayClick = this.handleDayClick.bind(this);
-}
+  }
 
-
-handleDayClick(day, { selected }) {
-   if (selected) {
-     // Unselect the day if already selected
-     this.setState({ date: undefined });
-     return;
-   }
-   this.setState({ date: day });
- }
+  handleDayClick(day, { selected }) {
+    if (selected) {
+      // Unselect the day if already selected
+      this.setState({ date: undefined });
+      return;
+    }
+    this.setState({ date: day });
+  }
   //
 
   boolCleaning(bool) {
@@ -72,7 +71,7 @@ handleDayClick(day, { selected }) {
   // Sends an email of the state above to the @info email
   doIt = e => {
     e.preventDefault();
-    this.setState({disabled:true});
+    this.setState({ disabled: true });
     const twoPrecent = this.filterWords();
     swal("Skickat!", "fantastisk", "success");
     emailjs
@@ -96,20 +95,13 @@ handleDayClick(day, { selected }) {
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   // UI Level interaction
 
-
-
   onTimeChange(options) {
     console.log(options);
-    const {
-        hour,
-        minute,
-        meridiem
-      } = options;
-      console.log(hour);
-      this.setState({'hour':hour});
-      this.setState({'minute':minute});
-
-      }
+    const { hour, minute, meridiem } = options;
+    console.log(hour);
+    this.setState({ hour: hour });
+    this.setState({ minute: minute });
+  }
 
   onFocusChange(focusStatue) {
     // do something
@@ -139,13 +131,8 @@ handleDayClick(day, { selected }) {
   };
 
   render() {
-    const {
-  hour,
-  minute,
-
-} = this.state;
+    const { hour, minute } = this.state;
     return (
-
       <Modal
         open={this.props.open && !this.state.sent}
         closeOnEsc
@@ -153,86 +140,85 @@ handleDayClick(day, { selected }) {
         onClose={this.props.onClose}
         center
       >
-
         <DesignerModal>
           <Title>ANGE DATUM, TID, SERVICE OCH KONTAKTUPPGIFTER</Title>
 
           <FormWrapper>
             <LeftSide>
-
               <DayPicker
                 onDayClick={this.handleDayClick}
-               selectedDays={this.state.date}
-               locale="sv"
-               localeUtils={MomentLocaleUtils}
-                  />
+                selectedDays={this.state.date}
+                locale="sv"
+                localeUtils={MomentLocaleUtils}
+              />
               <TimePicker
-                  onTimeChange={this.onTimeChange.bind(this)}
-                   time={hour && minute ? `${hour}:${minute}` : null}
-                   colorPalette="dark"
-                />
+                onTimeChange={this.onTimeChange.bind(this)}
+                time={hour && minute ? `${hour}:${minute}` : null}
+                colorPalette="dark"
+              />
             </LeftSide>
 
             <RightSide>
+              <Fragment>
+                <SwitchWrapper>
+                  <SwitchLabel htmlFor="cleaning">
+                    <Switch
+                      width={60}
+                      height={30}
+                      offColor="#808080"
+                      onColor="#10069F"
+                      onChange={this.handleLaundry}
+                      checked={this.state.cleaning}
+                      id="cleaning-switch"
+                    />
+                    <SSpan>STÄDHJÄLP</SSpan>
+                  </SwitchLabel>
+                  <SwitchLabel htmlFor="moving">
+                    <Switch
+                      width={60}
+                      height={30}
+                      offColor="#808080"
+                      onColor="#10069F"
+                      onChange={this.handleMoving}
+                      checked={this.state.moving}
+                      id="moving-switch"
+                    />
+                    <SSpan>FLYTTHJÄLP</SSpan>
+                  </SwitchLabel>
+                  <SwitchLabel htmlFor="garden">
+                    <Switch
+                      width={60}
+                      height={30}
+                      offColor="#808080"
+                      onColor="#10069F"
+                      onChange={this.handleGarden}
+                      checked={this.state.garden}
+                      id="garden-switch"
+                    />
+                    <SSpan>TRÄDGÅRD</SSpan>
+                  </SwitchLabel>
+                </SwitchWrapper>
+                <InputNoTop
+                  value={this.state.phone}
+                  onChange={this.handlePhone}
+                  placeholder="DITT TELEFONNUMMER"
+                  type="phone"
+                  required
+                />
+                <InputNoTop
+                  value={this.state.email}
+                  onChange={this.handleEmail}
+                  placeholder="ELLER E-POSTADRESS"
+                  type="email"
+                  required
+                />
+              </Fragment>
 
-                <Fragment>
-                  <SwitchWrapper>
-                    <SwitchLabel htmlFor="cleaning">
-                      <Switch
-                        width={60}
-                        height={30}
-                        offColor="#808080"
-                        onColor="#10069F"
-                        onChange={this.handleLaundry}
-                        checked={this.state.cleaning}
-                        id="cleaning-switch"
-                      />
-                      <SSpan>STÄDHJÄLP</SSpan>
-                    </SwitchLabel>
-                    <SwitchLabel htmlFor="moving">
-                      <Switch
-                        width={60}
-                        height={30}
-                        offColor="#808080"
-                        onColor="#10069F"
-                        onChange={this.handleMoving}
-                        checked={this.state.moving}
-                        id="moving-switch"
-                      />
-                      <SSpan>FLYTTHJÄLP</SSpan>
-                    </SwitchLabel>
-                    <SwitchLabel htmlFor="garden">
-                      <Switch
-                        width={60}
-                        height={30}
-                        offColor="#808080"
-                        onColor="#10069F"
-                        onChange={this.handleGarden}
-                        checked={this.state.garden}
-                        id="garden-switch"
-                      />
-                      <SSpan>TRÄDGÅRD</SSpan>
-                    </SwitchLabel>
-                  </SwitchWrapper>
-                  <InputNoTop
-                    value={this.state.phone}
-                    onChange={this.handlePhone}
-                    placeholder="DITT TELEFONNUMMER"
-                    type="phone"
-                    required
-                  />
-                  <InputNoTop
-                    value={this.state.email}
-                    onChange={this.handleEmail}
-                    placeholder="ELLER E-POSTADRESS"
-                    type="email"
-                    required
-                  />
-
-                </Fragment>
-
-
-              <Boka onClick={this.doIt} state={this.state} disabled={this.state.disabled}>
+              <Boka
+                onClick={this.doIt}
+                state={this.state}
+                disabled={this.state.disabled}
+              >
                 Att Boka
               </Boka>
             </RightSide>
@@ -282,7 +268,7 @@ const DesignerModal = styled.div`
 const LeftSide = styled.div`
   width: 100%;
   height: 100%;
-  padding-top:40px;
+  padding-top: 40px;
 
   .calendar {
     height: 400px;
